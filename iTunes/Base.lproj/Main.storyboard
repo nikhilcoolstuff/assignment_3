@@ -48,7 +48,7 @@
         <scene sceneID="SIq-vP-3Yd">
             <objects>
                 <navigationController id="3dv-8g-MP6" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Movies" image="icons8-clapperboard" id="NgW-6x-OpO"/>
+                    <tabBarItem key="tabBarItem" title="Movies" image="icons8-clapperboard" selectedImage="icons8-clapperboard-filled" id="NgW-6x-OpO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="DnB-lB-oeL">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -82,7 +82,7 @@
         <scene sceneID="I77-IL-44b">
             <objects>
                 <navigationController id="2hc-R3-rxb" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Favorites" image="icons8-heart" id="kfc-4r-UTV"/>
+                    <tabBarItem key="tabBarItem" title="Favorites" image="icons8-heart" selectedImage="icons8-heart-filled" id="kfc-4r-UTV"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="LVH-fu-A7d">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -99,7 +99,7 @@
         <scene sceneID="JbB-90-6vh">
             <objects>
                 <navigationController id="TDH-HB-u12" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Settings" image="icons8-settings" id="1AH-eH-haI"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="icons8-settings" selectedImage="icons8-settings-filled" id="1AH-eH-haI"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="mWK-wf-ZPJ">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -133,8 +133,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="icons8-clapperboard" width="37" height="37"/>
-        <image name="icons8-heart" width="37" height="37"/>
-        <image name="icons8-settings" width="37" height="37"/>
+        <image name="icons8-clapperboard" width="25" height="25"/>
+        <image name="icons8-clapperboard-filled" width="16" height="16"/>
+        <image name="icons8-heart" width="25" height="25"/>
+        <image name="icons8-heart-filled" width="16" height="16"/>
+        <image name="icons8-settings" width="25" height="25"/>
+        <image name="icons8-settings-filled" width="16" height="16"/>
     </resources>
 </document>
