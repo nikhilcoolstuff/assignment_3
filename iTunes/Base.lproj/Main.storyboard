@@ -134,10 +134,10 @@
     </scenes>
     <resources>
         <image name="icons8-clapperboard" width="25" height="25"/>
-        <image name="icons8-clapperboard-filled" width="16" height="16"/>
+        <image name="icons8-clapperboard-filled" width="25" height="25"/>
         <image name="icons8-heart" width="25" height="25"/>
-        <image name="icons8-heart-filled" width="16" height="16"/>
+        <image name="icons8-heart-filled" width="25" height="25"/>
         <image name="icons8-settings" width="25" height="25"/>
-        <image name="icons8-settings-filled" width="16" height="16"/>
+        <image name="icons8-settings-filled" width="25" height="25"/>
     </resources>
 </document>
