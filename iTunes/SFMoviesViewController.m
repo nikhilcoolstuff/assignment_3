@@ -9,7 +9,7 @@
 #import "SFMoviesViewController.h"
 
 @interface SFMoviesViewController ()
-
+@property (nonatomic, strong) UISearchController *searchVC;
 @end
 
 @implementation SFMoviesViewController
@@ -18,7 +18,8 @@
     [super viewDidLoad];
     self.navigationItem.title = @"Movies";
     self.navigationController.navigationBar.prefersLargeTitles = YES;
-    self.navigationItem.searchController = [[UISearchController alloc] init];
+    self.searchVC = [[UISearchController alloc] initWithSearchResultsController:[[UIViewController alloc] init]];
+    self.navigationItem.searchController = self.searchVC;
     // Do any additional setup after loading the view.
 }
 
