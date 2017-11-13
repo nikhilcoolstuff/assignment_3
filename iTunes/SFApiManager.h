@@ -1,14 +1,13 @@
 //
-//  ViewController.h
+//  SFApiManager.h
 //  iTunes
 //
 //  Created by Nikhil Lele on 11/13/17.
 //  Copyright © 2017 Salesforce. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
-@interface ViewController : UIViewController
+@interface SFApiManager : NSObject
 
 @end
-

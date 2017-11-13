@@ -15,6 +15,10 @@
 		B96E71081FBA32B8009630ED /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B96E71071FBA32B8009630ED /* main.m */; };
 		B96E71121FBA32B8009630ED /* iTunesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B96E71111FBA32B8009630ED /* iTunesTests.m */; };
 		B96E711D1FBA32B8009630ED /* iTunesUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B96E711C1FBA32B8009630ED /* iTunesUITests.m */; };
+		B96E712C1FBA36A1009630ED /* SFApiManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B96E712B1FBA36A1009630ED /* SFApiManager.m */; };
+		B96E712F1FBA3D0A009630ED /* SFMoviesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B96E712E1FBA3D0A009630ED /* SFMoviesViewController.m */; };
+		B96E71321FBA3D1B009630ED /* SFFavoritesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B96E71311FBA3D1B009630ED /* SFFavoritesViewController.m */; };
+		B96E71351FBA3D2C009630ED /* SFSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B96E71341FBA3D2C009630ED /* SFSettingsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +55,14 @@
 		B96E71181FBA32B8009630ED /* iTunesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iTunesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B96E711C1FBA32B8009630ED /* iTunesUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iTunesUITests.m; sourceTree = "<group>"; };
 		B96E711E1FBA32B8009630ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B96E712A1FBA36A1009630ED /* SFApiManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SFApiManager.h; sourceTree = "<group>"; };
+		B96E712B1FBA36A1009630ED /* SFApiManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SFApiManager.m; sourceTree = "<group>"; };
+		B96E712D1FBA3D0A009630ED /* SFMoviesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SFMoviesViewController.h; sourceTree = "<group>"; };
+		B96E712E1FBA3D0A009630ED /* SFMoviesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SFMoviesViewController.m; sourceTree = "<group>"; };
+		B96E71301FBA3D1B009630ED /* SFFavoritesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SFFavoritesViewController.h; sourceTree = "<group>"; };
+		B96E71311FBA3D1B009630ED /* SFFavoritesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SFFavoritesViewController.m; sourceTree = "<group>"; };
+		B96E71331FBA3D2C009630ED /* SFSettingsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SFSettingsViewController.h; sourceTree = "<group>"; };
+		B96E71341FBA3D2C009630ED /* SFSettingsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SFSettingsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +117,14 @@
 				B96E70F91FBA32B8009630ED /* AppDelegate.m */,
 				B96E70FB1FBA32B8009630ED /* ViewController.h */,
 				B96E70FC1FBA32B8009630ED /* ViewController.m */,
+				B96E712D1FBA3D0A009630ED /* SFMoviesViewController.h */,
+				B96E712E1FBA3D0A009630ED /* SFMoviesViewController.m */,
+				B96E71301FBA3D1B009630ED /* SFFavoritesViewController.h */,
+				B96E71311FBA3D1B009630ED /* SFFavoritesViewController.m */,
+				B96E71331FBA3D2C009630ED /* SFSettingsViewController.h */,
+				B96E71341FBA3D2C009630ED /* SFSettingsViewController.m */,
+				B96E712A1FBA36A1009630ED /* SFApiManager.h */,
+				B96E712B1FBA36A1009630ED /* SFApiManager.m */,
 				B96E70FE1FBA32B8009630ED /* Main.storyboard */,
 				B96E71011FBA32B8009630ED /* Assets.xcassets */,
 				B96E71031FBA32B8009630ED /* LaunchScreen.storyboard */,
@@ -266,8 +286,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				B96E70FD1FBA32B8009630ED /* ViewController.m in Sources */,
+				B96E71321FBA3D1B009630ED /* SFFavoritesViewController.m in Sources */,
 				B96E71081FBA32B8009630ED /* main.m in Sources */,
+				B96E712F1FBA3D0A009630ED /* SFMoviesViewController.m in Sources */,
 				B96E70FA1FBA32B8009630ED /* AppDelegate.m in Sources */,
+				B96E71351FBA3D2C009630ED /* SFSettingsViewController.m in Sources */,
+				B96E712C1FBA36A1009630ED /* SFApiManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

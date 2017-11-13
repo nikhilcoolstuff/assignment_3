@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  SFSettingsViewController.h
 //  iTunes
 //
 //  Created by Nikhil Lele on 11/13/17.
@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface SFSettingsViewController : UIViewController
 
 @end
-
