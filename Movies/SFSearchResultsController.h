@@ -16,6 +16,5 @@
 
 @interface SFSearchResultsController : UITableViewController
 @property(nonatomic, weak) id<SFSearchResultsDelegate> delegate;
-
 -(void) updateSearchResultsForMovies: (NSArray *) movies; 
 @end

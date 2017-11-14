@@ -8,17 +8,20 @@
 
 #import "SFSearchResultsController.h"
 #import "SFSearchResultCell.h"
+#import "SFNetworkManager.h"
 
 @interface SFSearchResultsController () {
     NSArray *privateMovies;
 }
-
+@property (nonatomic, strong) SFNetworkManager *networkManager;
 @end
 
 @implementation SFSearchResultsController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.networkManager = [[SFNetworkManager alloc] init];
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -65,7 +68,7 @@
 {
     
     SFMovie *movie = privateMovies[sender.tag];
-    NSLog(movie.trackName);
+    [self.networkManager  writeStringToFile:movie.trackName];
 }
 
 -(NSString *)formateDateString:(NSString * )apiDate{

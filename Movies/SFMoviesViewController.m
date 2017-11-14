@@ -34,6 +34,7 @@
     self.navigationItem.searchController = self.searchController;
     self.definesPresentationContext = YES;
     self.networkManager = [[SFNetworkManager alloc] init];
+    
 }
 
 - (void)didReceiveMemoryWarning {
