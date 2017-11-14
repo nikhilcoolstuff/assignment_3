@@ -1,6 +1,6 @@
 //
-//  iTunesTests.m
-//  iTunesTests
+//  MoviesTests.m
+//  MoviesTests
 //
 //  Created by Nikhil Lele on 11/13/17.
 //  Copyright © 2017 Salesforce. All rights reserved.
@@ -8,11 +8,11 @@
 
 #import <XCTest/XCTest.h>
 
-@interface iTunesTests : XCTestCase
+@interface MoviesTests : XCTestCase
 
 @end
 
-@implementation iTunesTests
+@implementation MoviesTests
 
 - (void)setUp {
     [super setUp];

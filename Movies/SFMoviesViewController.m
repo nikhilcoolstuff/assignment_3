@@ -1,15 +1,18 @@
 //
 //  SFMoviesViewController.m
-//  iTunes
+//  Movies
 //
 //  Created by Nikhil Lele on 11/13/17.
 //  Copyright © 2017 Salesforce. All rights reserved.
 //
 
 #import "SFMoviesViewController.h"
+#import "SFSearchResultsController.h"
+#import "SFNetworkManager.h"
 
 @interface SFMoviesViewController ()
-@property (nonatomic, strong) UISearchController *searchVC;
+@property (nonatomic, strong) SFSearchResultsController *searchResultsVC;
+@property (nonatomic, strong) SFNetworkManager *networkManager;
 @end
 
 @implementation SFMoviesViewController
@@ -18,8 +21,10 @@
     [super viewDidLoad];
     self.navigationItem.title = @"Movies";
     self.navigationController.navigationBar.prefersLargeTitles = YES;
-    self.searchVC = [[UISearchController alloc] initWithSearchResultsController:[[UIViewController alloc] init]];
-    self.navigationItem.searchController = self.searchVC;
+    self.searchResultsVC = [[SFSearchResultsController alloc] init];
+    self.navigationItem.searchController = [[UISearchController alloc] initWithSearchResultsController:self.searchResultsVC];
+    self.networkManager = [[SFNetworkManager alloc] init];
+    [self.networkManager callAPIforSearchString:@"test"]; 
     // Do any additional setup after loading the view.
 }
 
