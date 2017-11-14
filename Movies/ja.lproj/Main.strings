@@ -1,0 +1,51 @@
+
+/* Class = "UITabBarItem"; title = "Settings"; ObjectID = "1AH-eH-haI"; */
+"1AH-eH-haI.title" = "設定";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "D3d-w6-DPt"; */
+"D3d-w6-DPt.text" = "Label";
+
+/* Class = "UILabel"; text = "Rastovich went from observer to activist when he embarked on a personal mission to help dolphins, whales and the oceans they all share. While unsure at first, Rasta quickly found his activist sea legs and helped build a core team of filmmakers, journalists, musicians, eco-pirates and celebrity surfers to help spread the message, in an international quest to inspire change"; ObjectID = "E6M-en-1t0"; */
+"E6M-en-1t0.text" = "Rastovich went from observer to activist when he embarked on a personal mission to help dolphins, whales and the oceans they all share. While unsure at first, Rasta quickly found his activist sea legs and helped build a core team of filmmakers, journalists, musicians, eco-pirates and celebrity surfers to help spread the message, in an international quest to inspire change";
+
+/* Class = "UILabel"; text = "Direct By:"; ObjectID = "EdM-UO-NCB"; */
+"EdM-UO-NCB.text" = "Direct By:";
+
+/* Class = "UILabel"; text = "detail"; ObjectID = "EnC-5A-alu"; */
+"EnC-5A-alu.text" = "detail";
+
+/* Class = "UITabBarItem"; title = "Movies"; ObjectID = "NgW-6x-OpO"; */
+"NgW-6x-OpO.title" = "映画";
+
+/* Class = "UILabel"; text = "Release Date:"; ObjectID = "UYD-bw-Zca"; */
+"UYD-bw-Zca.text" = "Release Date:";
+
+/* Class = "UITabBarItem"; title = "Movies"; ObjectID = "X6F-8D-caz"; */
+"X6F-8D-caz.title" = "映画";
+
+/* Class = "UILabel"; text = "duration"; ObjectID = "X9S-iL-9Ew"; */
+"X9S-iL-9Ew.text" = "duration";
+
+/* Class = "UITabBarItem"; title = "Settings"; ObjectID = "caa-F7-jzQ"; */
+"caa-F7-jzQ.title" = "設定";
+
+/* Class = "UILabel"; text = "year"; ObjectID = "fXu-k1-6g5"; */
+"fXu-k1-6g5.text" = "year";
+
+/* Class = "UITabBarItem"; title = "Favorites"; ObjectID = "hfu-vB-Z8C"; */
+"hfu-vB-Z8C.title" = "お気に入り";
+
+/* Class = "UILabel"; text = "Directed By"; ObjectID = "ibs-Re-VsU"; */
+"ibs-Re-VsU.text" = "Directed By";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "j8M-C6-oGp"; */
+"j8M-C6-oGp.text" = "Label";
+
+/* Class = "UITabBarItem"; title = "Favorites"; ObjectID = "kfc-4r-UTV"; */
+"kfc-4r-UTV.title" = "お気に入り";
+
+/* Class = "UILabel"; text = "Movie Name"; ObjectID = "v0v-td-gKd"; */
+"v0v-td-gKd.text" = "Movie Name";
+
+/* Class = "UILabel"; text = "Movie Name "; ObjectID = "zUL-3R-c1g"; */
+"zUL-3R-c1g.text" = "Movie Name ";

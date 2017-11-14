@@ -2,7 +2,7 @@
 //  SFMovieDetailVC.m
 //  Movies
 //
-//  Created by Alankar Muley on 11/14/17.
+//  Created by Nikhil Lele on 11/14/17.
 //  Copyright © 2017 Salesforce. All rights reserved.
 //
 
@@ -50,12 +50,12 @@
 -(void) intialDataSetup {
     self.movieName.text = self.selectedMovie.trackName;
     self.releaseDate.text = [@"Release date:" stringByAppendingString:[self formateDateString:self.selectedMovie.releaseDate]];
-    self.duration.text = [@"Duration:" stringByAppendingString:[self millsToDurationString:self.selectedMovie.trackTimeMillis]];
+    self.duration.text = [@"Duration: " stringByAppendingString:[self millsToDurationString:self.selectedMovie.trackTimeMillis]];
 
-    self.directedBy.text =[@"Directed by:" stringByAppendingString:self.selectedMovie.artistName];
+    self.directedBy.text =[@"Directed by: " stringByAppendingString:self.selectedMovie.artistName];
     self.movieDetail.text = self.selectedMovie.shortDescription.length > 0 ? self.selectedMovie.shortDescription : self.selectedMovie.longDescription;
-    self.primaryGenreName.text = self.selectedMovie.primaryGenreName;
-    self.kind.text = self.selectedMovie.kind;
+    self.primaryGenreName.text = [@"Genre: " stringByAppendingString:self.selectedMovie.primaryGenreName];
+    self.kind.text =[@"Kind: " stringByAppendingString:self.selectedMovie.kind];
 }
 
 -(void) previewPlayer{
@@ -87,6 +87,5 @@
     NSCalendarUnit _units = NSCalendarUnitDay | NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond;
     NSDateComponents *_components = [_calendar components:_units fromDate:[NSDate date] toDate:[NSDate dateWithTimeIntervalSinceNow:[timeInSeconds longLongValue]] options:kNilOptions];
     return [NSString stringWithFormat:@"%ld h : %ld min",(long)_components.hour ,(long)_components.minute];
-//    NSLog(@"%ld Days, %ld Hours, %ld Minutes, %ld Seconds", _components.day, _components.hour, _components.minute, _components.second);
 }
 @end

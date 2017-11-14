@@ -10,6 +10,7 @@
 		030DEB5B1FBAA9320076E853 /* SFSearchResultsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 030DEB5A1FBAA9320076E853 /* SFSearchResultsController.m */; };
 		030DEB5E1FBAB9E30076E853 /* SFSearchResultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 030DEB5D1FBAB9E30076E853 /* SFSearchResultCell.m */; };
 		030DEB611FBADE0F0076E853 /* SFMovieDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 030DEB601FBADE0F0076E853 /* SFMovieDetailVC.m */; };
+		033BF3EB1FBB092600AE1B7E /* LocalizationStrings.strings in Resources */ = {isa = PBXBuildFile; fileRef = 033BF3E91FBB092600AE1B7E /* LocalizationStrings.strings */; };
 		B94A00741FBAB7FF00CB032B /* SFMovie.m in Sources */ = {isa = PBXBuildFile; fileRef = B94A00731FBAB7FF00CB032B /* SFMovie.m */; };
 		B96E70FA1FBA32B8009630ED /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B96E70F91FBA32B8009630ED /* AppDelegate.m */; };
 		B96E70FD1FBA32B8009630ED /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B96E70FC1FBA32B8009630ED /* ViewController.m */; };
@@ -50,6 +51,10 @@
 		030DEB5D1FBAB9E30076E853 /* SFSearchResultCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SFSearchResultCell.m; sourceTree = "<group>"; };
 		030DEB5F1FBADE0F0076E853 /* SFMovieDetailVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SFMovieDetailVC.h; sourceTree = "<group>"; };
 		030DEB601FBADE0F0076E853 /* SFMovieDetailVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SFMovieDetailVC.m; sourceTree = "<group>"; };
+		033BF3E71FBB086400AE1B7E /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
+		033BF3E81FBB086500AE1B7E /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		033BF3EA1FBB092600AE1B7E /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Movies/Base.lproj/LocalizationStrings.strings; sourceTree = "<group>"; };
+		033BF3EC1FBB096C00AE1B7E /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = Movies/ja.lproj/LocalizationStrings.strings; sourceTree = "<group>"; };
 		B94A00721FBAB7FF00CB032B /* SFMovie.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SFMovie.h; sourceTree = "<group>"; };
 		B94A00731FBAB7FF00CB032B /* SFMovie.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SFMovie.m; sourceTree = "<group>"; };
 		B96E70F51FBA32B8009630ED /* Movies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Movies.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -108,6 +113,7 @@
 		B96E70EC1FBA32B8009630ED = {
 			isa = PBXGroup;
 			children = (
+				033BF3E91FBB092600AE1B7E /* LocalizationStrings.strings */,
 				B96E70F71FBA32B8009630ED /* Movies */,
 				B96E71101FBA32B8009630ED /* MoviesTests */,
 				B96E711B1FBA32B8009630ED /* MoviesUITests */,
@@ -265,6 +271,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ja,
 			);
 			mainGroup = B96E70EC1FBA32B8009630ED;
 			productRefGroup = B96E70F61FBA32B8009630ED /* Products */;
@@ -285,6 +292,7 @@
 			files = (
 				B96E71051FBA32B8009630ED /* LaunchScreen.storyboard in Resources */,
 				B96E71021FBA32B8009630ED /* Assets.xcassets in Resources */,
+				033BF3EB1FBB092600AE1B7E /* LocalizationStrings.strings in Resources */,
 				B96E71001FBA32B8009630ED /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -357,10 +365,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		033BF3E91FBB092600AE1B7E /* LocalizationStrings.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				033BF3EA1FBB092600AE1B7E /* Base */,
+				033BF3EC1FBB096C00AE1B7E /* ja */,
+			);
+			name = LocalizationStrings.strings;
+			sourceTree = "<group>";
+		};
 		B96E70FE1FBA32B8009630ED /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				B96E70FF1FBA32B8009630ED /* Base */,
+				033BF3E71FBB086400AE1B7E /* ja */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -369,6 +387,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				B96E71041FBA32B8009630ED /* Base */,
+				033BF3E81FBB086500AE1B7E /* ja */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -380,6 +399,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -435,6 +455,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
