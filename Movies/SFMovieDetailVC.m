@@ -7,23 +7,28 @@
 //
 
 #import "SFMovieDetailVC.h"
+@import AVFoundation;
+@import AVKit;
 
 @interface SFMovieDetailVC ()
 @property (weak, nonatomic) IBOutlet UILabel *movieName;
-
+@property (weak, nonatomic) IBOutlet UILabel *releaseDate;
+@property (weak, nonatomic) IBOutlet UILabel *movieDetail;
+@property (weak, nonatomic) IBOutlet UIImageView *poster;
+@property (weak, nonatomic) IBOutlet UILabel *directedBy;
+@property (weak, nonatomic) IBOutlet UIView *moviePreviewView;
+@property (weak, nonatomic) IBOutlet UILabel *duration;
+@property (weak, nonatomic) IBOutlet UILabel *kind;
+@property (weak, nonatomic) IBOutlet UILabel *primaryGenreName;
 @end
 
 @implementation SFMovieDetailVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.movieName.text = self.selectedMovie.trackName;
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    [self navigationSetup];
+    [self intialDataSetup];
+    [self previewPlayer];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -31,70 +36,57 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Table view data source
-//
-//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-//#warning Incomplete implementation, return the number of sections
-//    return 0;
-//}
-//
-//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-//#warning Incomplete implementation, return the number of rows
-//    return 0;
-//}
 
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+#pragma mark - Local Methods
+
+-(void) navigationSetup {
+    self.navigationItem.title = @"Movie Detail";
+    UIBarButtonItem *_btn=[[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"icons8-heart"]
+                                                          style:UIBarButtonItemStylePlain
+                                                         target:self
+                                                         action:@selector(favouriteClicked)];
+    self.navigationItem.rightBarButtonItem = _btn;
+}
+-(void) intialDataSetup {
+    self.movieName.text = self.selectedMovie.trackName;
+    self.releaseDate.text = [@"Release date:" stringByAppendingString:[self formateDateString:self.selectedMovie.releaseDate]];
+    self.duration.text = [@"Duration:" stringByAppendingString:[self millsToDurationString:self.selectedMovie.trackTimeMillis]];
+
+    self.directedBy.text =[@"Directed by:" stringByAppendingString:self.selectedMovie.artistName];
+    self.movieDetail.text = self.selectedMovie.shortDescription.length > 0 ? self.selectedMovie.shortDescription : self.selectedMovie.longDescription;
+    self.primaryGenreName.text = self.selectedMovie.primaryGenreName;
+    self.kind.text = self.selectedMovie.kind;
+}
+
+-(void) previewPlayer{
+    NSURL *url = [NSURL URLWithString:self.selectedMovie.previewUrl];
+    AVPlayer *player = [AVPlayer playerWithURL:url];
+    AVPlayerViewController *controller = [[AVPlayerViewController alloc] init];
+    [self addChildViewController:controller];
+    [self.moviePreviewView addSubview:controller.view];
+    controller.view.frame = self.moviePreviewView.frame;
+    controller.player = player;
+}
+
+
+-(void)favouriteClicked
+{
+}
+
+-(NSString *)formateDateString:(NSString * )apiDate{
+    NSISO8601DateFormatter *formatter = [[NSISO8601DateFormatter alloc] init];
+    NSDate *date = [formatter dateFromString:apiDate];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"MMM d, yyyy"];
+    return  [dateFormatter stringFromDate:date];
+}
+
+-(NSString *)millsToDurationString:(NSNumber *)timeInSeconds {
     
-    // Configure the cell...
-    
-    return cell;
+    NSCalendar *_calendar = [NSCalendar calendarWithIdentifier:NSCalendarIdentifierGregorian];
+    NSCalendarUnit _units = NSCalendarUnitDay | NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond;
+    NSDateComponents *_components = [_calendar components:_units fromDate:[NSDate date] toDate:[NSDate dateWithTimeIntervalSinceNow:[timeInSeconds longLongValue]] options:kNilOptions];
+    return [NSString stringWithFormat:@"%ld h : %ld min",(long)_components.hour ,(long)_components.minute];
+//    NSLog(@"%ld Days, %ld Hours, %ld Minutes, %ld Seconds", _components.day, _components.hour, _components.minute, _components.second);
 }
-*/
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 @end
