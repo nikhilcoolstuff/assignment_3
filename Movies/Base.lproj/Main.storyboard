@@ -26,7 +26,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="SearchResultCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="favoritesCell" rowHeight="160" id="AVq-DT-2YC">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="favoritesCell" rowHeight="160" id="AVq-DT-2YC" customClass="SFFavoritesCell">
                                 <rect key="frame" x="0.0" y="28" width="375" height="160"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="AVq-DT-2YC" id="5Ca-Zj-4ii">
@@ -152,6 +152,14 @@
                                         <constraint firstItem="hEg-xe-J2w" firstAttribute="top" secondItem="5Ca-Zj-4ii" secondAttribute="top" constant="4" id="usw-Dh-06q"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="directedBy" destination="vwG-r6-8MF" id="K9e-GE-qmP"/>
+                                    <outlet property="favButton" destination="d83-Kw-oW8" id="8LQ-oW-tnZ"/>
+                                    <outlet property="movieDetail" destination="wYk-UW-r7W" id="icy-SU-tBm"/>
+                                    <outlet property="movieName" destination="AFy-hB-s84" id="omv-D5-00e"/>
+                                    <outlet property="poster" destination="C4a-D8-DkJ" id="x32-sH-O5m"/>
+                                    <outlet property="releaseDate" destination="T5r-ek-NLf" id="FcO-1h-ZUN"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
