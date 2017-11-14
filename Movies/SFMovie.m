@@ -22,7 +22,6 @@
         _trackViewUrl = dict[@"trackViewUrl"];;
         _previewUrl = dict[@"previewUrl"];;
         _artworkUrl30 = dict[@"artworkUrl30"];;
-        _title = dict[@"title"];;
         _artworkUrl60 = dict[@"artworkUrl60"];;
         _artworkUrl100 = dict[@"artworkUrl100"];;
         _collectionPrice = dict[@"collectionPrice"];;

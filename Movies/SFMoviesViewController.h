@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SFMoviesViewController : UIViewController
+@interface SFMoviesViewController : UIViewController <UISearchResultsUpdating>
 
 @end

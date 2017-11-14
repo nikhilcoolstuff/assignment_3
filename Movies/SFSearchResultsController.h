@@ -10,4 +10,5 @@
 
 @interface SFSearchResultsController : UITableViewController
 
+-(void) updateSearchResultsForMovies: (NSArray *) movies; 
 @end

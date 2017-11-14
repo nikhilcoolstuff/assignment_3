@@ -19,7 +19,6 @@
 @property (nonatomic, copy) NSString *trackViewUrl;
 @property (nonatomic, copy) NSString *previewUrl;
 @property (nonatomic, copy) NSString *artworkUrl30;
-@property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *artworkUrl60;
 @property (nonatomic, copy) NSString *artworkUrl100;
 @property (nonatomic, strong) NSNumber *collectionPrice;

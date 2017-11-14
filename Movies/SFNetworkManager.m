@@ -33,6 +33,7 @@ static NSString * const BASE_URL = @"https://iTunes.apple.com/search";
 -(void) fetchSearchResultsForString: (NSString *) searchString completionHandler: (completionHandler) completionHandler {
 
     [self.fetchDataTask cancel];
+    self.errorMessage = nil;
     
     NSURLComponents *components = [NSURLComponents componentsWithString:BASE_URL];
     components.query = [NSString stringWithFormat:@"media=movie&term=%@", searchString];
@@ -44,7 +45,9 @@ static NSString * const BASE_URL = @"https://iTunes.apple.com/search";
         } else if (httpResponse.statusCode == 200) {
             [self updateSearchResultsForJson:data];
         }
-        completionHandler(self.movies, self.errorMessage);
+        dispatch_async(dispatch_get_main_queue(), ^{
+            completionHandler(self.movies, self.errorMessage);
+        });
     }];
     [self.fetchDataTask resume];
 }

@@ -8,7 +8,11 @@
 
 #import "SFSearchResultsController.h"
 #import "SFSearchResultCell.h"
-@interface SFSearchResultsController ()
+#import "SFMovie.h"
+
+@interface SFSearchResultsController () {
+    NSArray *privateMovies;
+}
 
 @end
 
@@ -23,21 +27,27 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void) updateSearchResultsForMovies: (NSArray *) movies {
+    privateMovies = [movies copy];
+    [self.tableView reloadData];
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 5;
+    return privateMovies.count;
 }
-
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     SFSearchResultCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SearchResultCell" forIndexPath:indexPath];
+    SFMovie *movie = privateMovies[indexPath.row];
+    
     //cell.poster = "";
-    cell.directedBy.text =@"Directed by:";
-    cell.releaseDate.text = @"Release date:";
-    //cell.movieName.text = @"";
-    //cell.movieDetail.text = @"";
+    cell.directedBy.text =[@"Directed by:" stringByAppendingString:movie.artistName];
+    cell.releaseDate.text = [@"Release date:" stringByAppendingString:movie.releaseDate];
+    cell.movieName.text = movie.trackName;
+    cell.movieDetail.text = movie.shortDescription.length > 0 ? movie.shortDescription : movie.longDescription;
     //favButton;
     return cell;
 }
