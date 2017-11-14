@@ -57,6 +57,15 @@
     self.movieDetail.text = self.selectedMovie.shortDescription.length > 0 ? self.selectedMovie.shortDescription : self.selectedMovie.longDescription;
     self.primaryGenreName.text = [NSLocalizedString(@"Genre",nil) stringByAppendingString:self.selectedMovie.primaryGenreName];
     self.kind.text =[NSLocalizedString(@"Kind",nil) stringByAppendingString:self.selectedMovie.kind];
+    
+    // load any previously cached images
+    if (self.selectedMovie.thumbnail) {
+        self.poster.image = self.selectedMovie.thumbnail;
+    } else {
+       // [self downloadThumbnailForMovie:movie forIndexPath:indexPath];
+        // meanwhile return a placeholder image
+        self.poster.image = [UIImage imageNamed:@"placeholder.png"];
+    }
 }
 
 -(void) previewPlayer{

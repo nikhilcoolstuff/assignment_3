@@ -11,8 +11,10 @@
 #import "SFMovie.h"
 #import "SFUtilities.h"
 #import "SFFavoritesCell.h"
+#import "SFMovieDetailVC.h"
 
 @interface SFFavoritesViewController ()
+@property (nonatomic, strong) SFMovie *favoritesSelectedMovie;
 @property (nonatomic, strong) NSArray *favoriteMovies;
 @property (nonatomic, strong) NSMutableDictionary *trackImageDownloadDict;
 @end
@@ -84,11 +86,26 @@
     }
 }
 
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    self.favoritesSelectedMovie = self.favoriteMovies[indexPath.row];
+    [self performSegueWithIdentifier:@"fav_movie_detail_segue" sender:nil];
+}
+
 #pragma mark local methods
 
 -(void)favoriteAction:(UIButton*)sender {
     SFMovie *movie = self.favoriteMovies[sender.tag];
     [[SFCacheManager sharedManager] favoriteMovie:movie];
+}
+
+#pragma mark - Navigation
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"fav_movie_detail_segue"]) {
+        SFMovieDetailVC *movieDetailVC = (SFMovieDetailVC *) segue.destinationViewController;
+        movieDetailVC.selectedMovie = self.favoritesSelectedMovie;
+    }
 }
 
 @end
