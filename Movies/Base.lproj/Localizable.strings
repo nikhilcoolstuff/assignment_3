@@ -15,3 +15,5 @@
 "Kind" = "Kind";
 "Favorites" = "Favorites";
 "Settings" = "Settings";
+"No_Favorites" = "No Movie added in favorites";
+"No_Data" = "No movies to show";
