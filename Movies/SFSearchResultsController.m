@@ -8,7 +8,6 @@
 
 #import "SFSearchResultsController.h"
 #import "SFSearchResultCell.h"
-#import "SFMovie.h"
 
 @interface SFSearchResultsController () {
     NSArray *privateMovies;
@@ -54,9 +53,10 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    
-    
+    SFMovie *movie = privateMovies[indexPath.row];
+    if ([_delegate respondsToSelector:@selector(didSelectsearchResultCell:)]){
+        [_delegate didSelectsearchResultCell:movie];
+    }
 }
 
 #pragma mark - Local Methods

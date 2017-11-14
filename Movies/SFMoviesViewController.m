@@ -9,8 +9,12 @@
 #import "SFMoviesViewController.h"
 #import "SFSearchResultsController.h"
 #import "SFNetworkManager.h"
+#import "SFMovieDetailVC.h"
 
-@interface SFMoviesViewController ()
+
+@interface SFMoviesViewController ()<SFSearchResultsDelegate>{
+    SFMovie *searchSelectedMovie;
+}
 @property (nonatomic, strong) SFSearchResultsController *searchResultsVC;
 @property (nonatomic, strong) SFNetworkManager *networkManager;
 @property (nonatomic, strong) UISearchController *searchController;
@@ -24,6 +28,7 @@
     self.navigationController.navigationBar.prefersLargeTitles = YES;
     self.searchResultsVC = [self.storyboard instantiateViewControllerWithIdentifier:@"SearchResultsVC"];
     self.searchController = [[UISearchController alloc] initWithSearchResultsController:self.searchResultsVC];
+    self.searchResultsVC.delegate = self;
     self.searchController.searchBar.placeholder = @"Search Movies";
     self.searchController.searchResultsUpdater = self;
     self.navigationItem.searchController = self.searchController;
@@ -46,14 +51,24 @@
     }];
 }
 
-/*
+#pragma mark - SFSearchResultsDelegate
+
+- (void) didSelectsearchResultCell:(SFMovie *)selectedMovie{
+    searchSelectedMovie = selectedMovie ;
+    [self performSegueWithIdentifier:@"movie_detail_segue" sender:nil];
+
+}
+
+
+
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+  if ([segue.identifier isEqualToString:@"movie_detail_segue"]) {
+      SFMovieDetailVC *movieDetailVC = (SFMovieDetailVC *) segue.destinationViewController;
+      movieDetailVC.selectedMovie = searchSelectedMovie ;
+  }
 }
-*/
+
 
 @end

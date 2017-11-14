@@ -7,8 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SFMovie.h"
+
+
+@protocol SFSearchResultsDelegate <NSObject>
+- (void) didSelectsearchResultCell:(SFMovie *)selectedMovie;
+@end
 
 @interface SFSearchResultsController : UITableViewController
+@property(nonatomic, weak) id<SFSearchResultsDelegate> delegate;
 
 -(void) updateSearchResultsForMovies: (NSArray *) movies; 
 @end
