@@ -51,9 +51,8 @@
 
 -(void) requestNewDataFromServer {
     [self.networkManager fetchSearchResultsForString:self.searchController.searchBar.text completionHandler:^(NSArray *movies, NSString *errorString) {
-        if (errorString)
-            // TODO show error
-            NSLog(@"%@", errorString);
+        if (errorString.length > 0)
+            [self handleError:errorString];
         else
             [self.searchResultsVC updateSearchResultsForMovies:movies];
     }];
@@ -79,5 +78,26 @@
       movieDetailVC.selectedMovie = searchSelectedMovie;
   }
 }
+
+- (void)handleError:(NSString *)errorMessage
+{
+    if ([errorMessage isEqualToString:@"No results found"])
+        return;
+    
+    // alert user that our current record was deleted, and then we leave this view controller
+    //
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Cannot Show Top Paid Apps"
+                                                                   message:errorMessage
+                                                            preferredStyle:UIAlertControllerStyleActionSheet];
+    UIAlertAction *OKAction = [UIAlertAction actionWithTitle:@"OK"
+                                                       style:UIAlertActionStyleDefault
+                                                     handler:^(UIAlertAction *action) {
+                                                         // dissmissal of alert completed
+                                                     }];
+    
+    [alert addAction:OKAction];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
 
 @end

@@ -64,7 +64,7 @@ static NSString * const BASE_URL = @"https://iTunes.apple.com/search";
     }
     NSArray *results = json[@"results"];
     if (!results || results.count == 0)
-        self.errorMessage = @"Error: No results found";
+        self.errorMessage = @"No results found";
     
     [results enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         NSDictionary *movieDict = (NSDictionary *)obj;
