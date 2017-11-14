@@ -7,9 +7,10 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "SFNetworkManager.h"
 
 @interface MoviesTests : XCTestCase
-
+@property (nonatomic) S *vcToTest;
 @end
 
 @implementation MoviesTests

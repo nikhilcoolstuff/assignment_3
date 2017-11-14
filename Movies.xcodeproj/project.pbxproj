@@ -24,7 +24,6 @@
 		B96E71081FBA32B8009630ED /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B96E71071FBA32B8009630ED /* main.m */; };
 		B96E71121FBA32B8009630ED /* MoviesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B96E71111FBA32B8009630ED /* MoviesTests.m */; };
 		B96E711D1FBA32B8009630ED /* MoviesUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B96E711C1FBA32B8009630ED /* MoviesUITests.m */; };
-		B96E712C1FBA36A1009630ED /* SFApiManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B96E712B1FBA36A1009630ED /* SFApiManager.m */; };
 		B96E712F1FBA3D0A009630ED /* SFMoviesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B96E712E1FBA3D0A009630ED /* SFMoviesViewController.m */; };
 		B96E713B1FBA6549009630ED /* SFNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B96E713A1FBA6549009630ED /* SFNetworkManager.m */; };
 		B9EDC41C1FBB50EE00E4C1D8 /* SFUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = B9EDC41B1FBB50EE00E4C1D8 /* SFUtilities.m */; };
@@ -83,8 +82,6 @@
 		B96E71181FBA32B8009630ED /* MoviesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoviesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B96E711C1FBA32B8009630ED /* MoviesUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoviesUITests.m; sourceTree = "<group>"; };
 		B96E711E1FBA32B8009630ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B96E712A1FBA36A1009630ED /* SFApiManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SFApiManager.h; sourceTree = "<group>"; };
-		B96E712B1FBA36A1009630ED /* SFApiManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SFApiManager.m; sourceTree = "<group>"; };
 		B96E712D1FBA3D0A009630ED /* SFMoviesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SFMoviesViewController.h; sourceTree = "<group>"; };
 		B96E712E1FBA3D0A009630ED /* SFMoviesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SFMoviesViewController.m; sourceTree = "<group>"; };
 		B96E71391FBA6549009630ED /* SFNetworkManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SFNetworkManager.h; sourceTree = "<group>"; };
@@ -142,38 +139,19 @@
 		B96E70F71FBA32B8009630ED /* Movies */ = {
 			isa = PBXGroup;
 			children = (
+				B9EDC4261FBB780500E4C1D8 /* Utilities */,
+				B9EDC4251FBB77DD00E4C1D8 /* Views */,
+				B9EDC4241FBB77B000E4C1D8 /* Networking */,
+				B9EDC4231FBB77AA00E4C1D8 /* Models */,
+				B9EDC4221FBB77A100E4C1D8 /* Controllers */,
 				B96E70F81FBA32B8009630ED /* AppDelegate.h */,
 				B96E70F91FBA32B8009630ED /* AppDelegate.m */,
-				B94A00721FBAB7FF00CB032B /* SFMovie.h */,
-				B94A00731FBAB7FF00CB032B /* SFMovie.m */,
-				B96E71391FBA6549009630ED /* SFNetworkManager.h */,
-				B96E713A1FBA6549009630ED /* SFNetworkManager.m */,
-				B96E712D1FBA3D0A009630ED /* SFMoviesViewController.h */,
-				B96E712E1FBA3D0A009630ED /* SFMoviesViewController.m */,
-				030DEB5F1FBADE0F0076E853 /* SFMovieDetailVC.h */,
-				030DEB601FBADE0F0076E853 /* SFMovieDetailVC.m */,
-				033BF3ED1FBB467800AE1B7E /* SFFavoritesViewController.h */,
-				033BF3EE1FBB467800AE1B7E /* SFFavoritesViewController.m */,
-				033BF3F01FBB489600AE1B7E /* SFFavoritesCell.h */,
-				033BF3F11FBB489600AE1B7E /* SFFavoritesCell.m */,
-				B96E712A1FBA36A1009630ED /* SFApiManager.h */,
-				B96E712B1FBA36A1009630ED /* SFApiManager.m */,
 				B96E70FE1FBA32B8009630ED /* Main.storyboard */,
-				030DEB5C1FBAB9E30076E853 /* SFSearchResultCell.h */,
-				030DEB5D1FBAB9E30076E853 /* SFSearchResultCell.m */,
-				030DEB591FBAA9320076E853 /* SFSearchResultsController.h */,
-				030DEB5A1FBAA9320076E853 /* SFSearchResultsController.m */,
 				B96E71011FBA32B8009630ED /* Assets.xcassets */,
 				B96E71031FBA32B8009630ED /* LaunchScreen.storyboard */,
 				B96E71061FBA32B8009630ED /* Info.plist */,
 				B96E71071FBA32B8009630ED /* main.m */,
-				B94A007A1FBB2D7500CB032B /* SFImageDownloader.h */,
-				B94A007B1FBB2D7500CB032B /* SFImageDownloader.m */,
 				B94A007D1FBB36EB00CB032B /* placeholder.png */,
-				B94A007F1FBB464000CB032B /* SFCacheManager.h */,
-				B94A00801FBB464000CB032B /* SFCacheManager.m */,
-				B9EDC41A1FBB50EE00E4C1D8 /* SFUtilities.h */,
-				B9EDC41B1FBB50EE00E4C1D8 /* SFUtilities.m */,
 			);
 			path = Movies;
 			sourceTree = "<group>";
@@ -194,6 +172,63 @@
 				B96E711E1FBA32B8009630ED /* Info.plist */,
 			);
 			path = MoviesUITests;
+			sourceTree = "<group>";
+		};
+		B9EDC4221FBB77A100E4C1D8 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B96E712D1FBA3D0A009630ED /* SFMoviesViewController.h */,
+				B96E712E1FBA3D0A009630ED /* SFMoviesViewController.m */,
+				033BF3ED1FBB467800AE1B7E /* SFFavoritesViewController.h */,
+				033BF3EE1FBB467800AE1B7E /* SFFavoritesViewController.m */,
+				030DEB591FBAA9320076E853 /* SFSearchResultsController.h */,
+				030DEB5A1FBAA9320076E853 /* SFSearchResultsController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		B9EDC4231FBB77AA00E4C1D8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B94A00721FBAB7FF00CB032B /* SFMovie.h */,
+				B94A00731FBAB7FF00CB032B /* SFMovie.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B9EDC4241FBB77B000E4C1D8 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				B96E71391FBA6549009630ED /* SFNetworkManager.h */,
+				B96E713A1FBA6549009630ED /* SFNetworkManager.m */,
+				B94A007A1FBB2D7500CB032B /* SFImageDownloader.h */,
+				B94A007B1FBB2D7500CB032B /* SFImageDownloader.m */,
+				B94A007F1FBB464000CB032B /* SFCacheManager.h */,
+				B94A00801FBB464000CB032B /* SFCacheManager.m */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		B9EDC4251FBB77DD00E4C1D8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				030DEB5C1FBAB9E30076E853 /* SFSearchResultCell.h */,
+				030DEB5D1FBAB9E30076E853 /* SFSearchResultCell.m */,
+				030DEB5F1FBADE0F0076E853 /* SFMovieDetailVC.h */,
+				030DEB601FBADE0F0076E853 /* SFMovieDetailVC.m */,
+				033BF3F01FBB489600AE1B7E /* SFFavoritesCell.h */,
+				033BF3F11FBB489600AE1B7E /* SFFavoritesCell.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B9EDC4261FBB780500E4C1D8 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				B9EDC41A1FBB50EE00E4C1D8 /* SFUtilities.h */,
+				B9EDC41B1FBB50EE00E4C1D8 /* SFUtilities.m */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -342,7 +377,6 @@
 				033BF3EF1FBB467800AE1B7E /* SFFavoritesViewController.m in Sources */,
 				B96E70FA1FBA32B8009630ED /* AppDelegate.m in Sources */,
 				033BF3F21FBB489600AE1B7E /* SFFavoritesCell.m in Sources */,
-				B96E712C1FBA36A1009630ED /* SFApiManager.m in Sources */,
 				030DEB5E1FBAB9E30076E853 /* SFSearchResultCell.m in Sources */,
 				B94A00811FBB464000CB032B /* SFCacheManager.m in Sources */,
 				B94A00741FBAB7FF00CB032B /* SFMovie.m in Sources */,
