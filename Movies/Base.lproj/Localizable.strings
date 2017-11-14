@@ -8,9 +8,9 @@
 "Movies" = "Movies";
 "Search_Movies" = "Search Movies";
 "Movie_Detail"  = "Movie Detail";
-"Release_date"  = "Release date:";
+"Release_date"  = "Release: ";
 "Duration" = "Duration";
-"Directed_by" = "Directed by:";
+"Directed_by" = "Director: ";
 "Genre" = "Genre";
 "Kind" = "Kind";
 "Favorites" = "Favorites";

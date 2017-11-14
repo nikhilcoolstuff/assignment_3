@@ -14,6 +14,7 @@
     <customFonts key="customFonts">
         <array key="HelveticaNeue.ttc">
             <string>HelveticaNeue</string>
+            <string>HelveticaNeue-Bold</string>
         </array>
     </customFonts>
     <scenes>
@@ -59,21 +60,22 @@
                                                                 <constraint firstAttribute="height" constant="1" id="JZe-iE-myB"/>
                                                             </constraints>
                                                         </view>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Directed By" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vwG-r6-8MF">
-                                                            <rect key="frame" x="15" y="15.5" width="66.5" height="14.5"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Director:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vwG-r6-8MF">
+                                                            <rect key="frame" x="15" y="13.5" width="66.5" height="19.5"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Release Date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T5r-ek-NLf">
-                                                            <rect key="frame" x="266" y="15.5" width="78" height="14.5"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Release:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T5r-ek-NLf">
+                                                            <rect key="frame" x="279.5" y="13.5" width="64.5" height="19.5"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
+                                                        <constraint firstItem="T5r-ek-NLf" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="vwG-r6-8MF" secondAttribute="trailing" constant="5" id="3Xi-VS-5ue"/>
                                                         <constraint firstAttribute="trailing" secondItem="T5r-ek-NLf" secondAttribute="trailing" constant="15" id="5En-BB-uI4"/>
                                                         <constraint firstItem="T5r-ek-NLf" firstAttribute="centerY" secondItem="mMC-eZ-tdP" secondAttribute="centerY" id="5Z5-Ok-bXH"/>
                                                         <constraint firstItem="vwG-r6-8MF" firstAttribute="leading" secondItem="mMC-eZ-tdP" secondAttribute="leading" constant="15" id="6J7-VO-C4w"/>
@@ -89,16 +91,16 @@
                                                     <rect key="frame" x="79" y="3" width="242" height="104"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movie Name " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AFy-hB-s84">
-                                                            <rect key="frame" x="0.0" y="0.0" width="242" height="30"/>
-                                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="242" height="31.5"/>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
                                                             <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wYk-UW-r7W">
-                                                            <rect key="frame" x="0.0" y="30" width="242" height="74"/>
+                                                            <rect key="frame" x="0.0" y="31.5" width="242" height="72.5"/>
                                                             <string key="text">Rastovich went from observer to activist when he embarked on a personal mission to help dolphins, whales and the oceans they all share. While unsure at first, Rasta quickly found his activist sea legs and helped build a core team of filmmakers, journalists, musicians, eco-pirates and celebrity surfers to help spread the message, in an international quest to inspire change</string>
                                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
-                                                            <color key="textColor" red="0.72156862749999995" green="0.72156862749999995" blue="0.72156862749999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
@@ -222,28 +224,28 @@
                                                                 <constraint firstAttribute="height" constant="1" id="7Du-sx-Ybf"/>
                                                             </constraints>
                                                         </view>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Directed By" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ibs-Re-VsU">
-                                                            <rect key="frame" x="15" y="15.5" width="66.5" height="14.5"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Director:  " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ibs-Re-VsU">
+                                                            <rect key="frame" x="5" y="13" width="74.5" height="19.5"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                                            <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Release Date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UYD-bw-Zca">
-                                                            <rect key="frame" x="266" y="15.5" width="78" height="14.5"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Release: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UYD-bw-Zca">
+                                                            <rect key="frame" x="285.5" y="13.5" width="68.5" height="19.5"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                                            <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstItem="UYD-bw-Zca" firstAttribute="centerY" secondItem="miv-ct-k5T" secondAttribute="centerY" id="1sg-IX-qgQ"/>
-                                                        <constraint firstItem="ibs-Re-VsU" firstAttribute="leading" secondItem="miv-ct-k5T" secondAttribute="leading" constant="15" id="5lZ-Nx-UrI"/>
+                                                        <constraint firstItem="ibs-Re-VsU" firstAttribute="leading" secondItem="miv-ct-k5T" secondAttribute="leading" constant="5" id="5lZ-Nx-UrI"/>
                                                         <constraint firstItem="dhM-rc-pxE" firstAttribute="leading" secondItem="miv-ct-k5T" secondAttribute="leading" id="6a1-Gb-KCd"/>
                                                         <constraint firstAttribute="bottom" secondItem="dhM-rc-pxE" secondAttribute="bottom" id="7iZ-0k-Ibw"/>
                                                         <constraint firstAttribute="trailing" secondItem="SEh-5V-STc" secondAttribute="trailing" id="IbM-lX-nef"/>
                                                         <constraint firstItem="SEh-5V-STc" firstAttribute="top" secondItem="miv-ct-k5T" secondAttribute="top" constant="2" id="Ixy-I8-9e4"/>
-                                                        <constraint firstAttribute="trailing" secondItem="UYD-bw-Zca" secondAttribute="trailing" constant="15" id="hlh-Rv-og7"/>
+                                                        <constraint firstAttribute="trailing" secondItem="UYD-bw-Zca" secondAttribute="trailing" constant="5" id="hlh-Rv-og7"/>
                                                         <constraint firstAttribute="trailing" secondItem="dhM-rc-pxE" secondAttribute="trailing" id="vce-FP-aIM"/>
                                                         <constraint firstItem="ibs-Re-VsU" firstAttribute="centerY" secondItem="miv-ct-k5T" secondAttribute="centerY" id="xsj-vt-zqU"/>
                                                     </constraints>
@@ -252,16 +254,16 @@
                                                     <rect key="frame" x="79" y="3" width="242" height="104"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movie Name " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zUL-3R-c1g">
-                                                            <rect key="frame" x="0.0" y="0.0" width="242" height="30"/>
-                                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="242" height="31.5"/>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
                                                             <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E6M-en-1t0">
-                                                            <rect key="frame" x="0.0" y="30" width="242" height="74"/>
+                                                            <rect key="frame" x="0.0" y="31.5" width="242" height="72.5"/>
                                                             <string key="text">Rastovich went from observer to activist when he embarked on a personal mission to help dolphins, whales and the oceans they all share. While unsure at first, Rasta quickly found his activist sea legs and helped build a core team of filmmakers, journalists, musicians, eco-pirates and celebrity surfers to help spread the message, in an international quest to inspire change</string>
                                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
-                                                            <color key="textColor" red="0.72156862745098038" green="0.72156862745098038" blue="0.72156862745098038" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
