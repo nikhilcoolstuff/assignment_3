@@ -17,7 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.navigationItem.title = @"Favorites";
+    self.navigationItem.title = NSLocalizedString(@"Favorites",nil);
     self.navigationController.navigationBar.prefersLargeTitles = YES;
 
 }

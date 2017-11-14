@@ -43,8 +43,8 @@
     SFMovie *movie = privateMovies[indexPath.row];
     
     //cell.poster = "";
-    cell.directedBy.text =[@"Directed by:" stringByAppendingString:movie.artistName];
-    cell.releaseDate.text = [@"Release date:" stringByAppendingString:[self formateDateString:movie.releaseDate]];
+    cell.directedBy.text =[NSLocalizedString(@"Directed_by",nil) stringByAppendingString:movie.artistName];
+    cell.releaseDate.text = [NSLocalizedString(@"Release_date",nil) stringByAppendingString:[self formateDateString:movie.releaseDate]];
     cell.movieName.text = movie.trackName;
     cell.movieDetail.text = movie.shortDescription.length > 0 ? movie.shortDescription : movie.longDescription;
     cell.favButton.tag = indexPath.row;

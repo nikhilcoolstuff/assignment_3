@@ -24,12 +24,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.title = @"Movies";
+    self.navigationItem.title = NSLocalizedString(@"Movies", nil);
     self.navigationController.navigationBar.prefersLargeTitles = YES;
     self.searchResultsVC = [self.storyboard instantiateViewControllerWithIdentifier:@"SearchResultsVC"];
     self.searchController = [[UISearchController alloc] initWithSearchResultsController:self.searchResultsVC];
     self.searchResultsVC.delegate = self;
-    self.searchController.searchBar.placeholder = @"Search Movies";
+    self.searchController.searchBar.placeholder = NSLocalizedString(@"Search_Movies",nil);
     self.searchController.searchResultsUpdater = self;
     self.navigationItem.searchController = self.searchController;
     self.definesPresentationContext = YES;

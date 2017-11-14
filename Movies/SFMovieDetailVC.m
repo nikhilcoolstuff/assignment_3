@@ -40,7 +40,7 @@
 #pragma mark - Local Methods
 
 -(void) navigationSetup {
-    self.navigationItem.title = @"Movie Detail";
+    self.navigationItem.title = NSLocalizedString(@"Movie_Detail",nil) ;
     UIBarButtonItem *_btn=[[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"icons8-heart"]
                                                           style:UIBarButtonItemStylePlain
                                                          target:self
@@ -49,13 +49,12 @@
 }
 -(void) intialDataSetup {
     self.movieName.text = self.selectedMovie.trackName;
-    self.releaseDate.text = [@"Release date:" stringByAppendingString:[self formateDateString:self.selectedMovie.releaseDate]];
-    self.duration.text = [@"Duration: " stringByAppendingString:[self millsToDurationString:self.selectedMovie.trackTimeMillis]];
-
-    self.directedBy.text =[@"Directed by: " stringByAppendingString:self.selectedMovie.artistName];
+    self.releaseDate.text = [NSLocalizedString(@"Release_date",nil)  stringByAppendingString:[self formateDateString:self.selectedMovie.releaseDate]];
+    self.duration.text = [NSLocalizedString(@"Duration",nil) stringByAppendingString:[self millsToDurationString:self.selectedMovie.trackTimeMillis]];
+    self.directedBy.text =[NSLocalizedString(@"Directed_by",nil) stringByAppendingString:self.selectedMovie.artistName];
     self.movieDetail.text = self.selectedMovie.shortDescription.length > 0 ? self.selectedMovie.shortDescription : self.selectedMovie.longDescription;
-    self.primaryGenreName.text = [@"Genre: " stringByAppendingString:self.selectedMovie.primaryGenreName];
-    self.kind.text =[@"Kind: " stringByAppendingString:self.selectedMovie.kind];
+    self.primaryGenreName.text = [NSLocalizedString(@"Genre",nil) stringByAppendingString:self.selectedMovie.primaryGenreName];
+    self.kind.text =[NSLocalizedString(@"Kind",nil) stringByAppendingString:self.selectedMovie.kind];
 }
 
 -(void) previewPlayer{

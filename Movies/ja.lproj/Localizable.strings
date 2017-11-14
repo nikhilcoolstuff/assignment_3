@@ -1,0 +1,17 @@
+/* 
+  LocalizationStrings.strings
+  Movies
+
+  Created by Nikhil Lele on 11/14/17.
+  Copyright © 2017 Salesforce. All rights reserved.
+*/
+"Movies" = "映画";
+"Search_Movies" = "映画を探す";
+"Movie_Detail" = "映画の詳細";
+"Release_date" = "発売日:";
+"Duration" = "期間";
+"Directed_by" = "監督:";
+"Genre" = "ジャンル";
+"Kind" = "種類";
+"Favorites" = "お気に入り";
+"Settings" = "設定";
