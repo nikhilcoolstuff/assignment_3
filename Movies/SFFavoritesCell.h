@@ -15,5 +15,4 @@
 @property (weak, nonatomic) IBOutlet UILabel *releaseDate;
 @property (weak, nonatomic) IBOutlet UILabel *movieName;
 @property (weak, nonatomic) IBOutlet UILabel *movieDetail;
-@property (weak, nonatomic) IBOutlet UIButton *favButton;
 @end

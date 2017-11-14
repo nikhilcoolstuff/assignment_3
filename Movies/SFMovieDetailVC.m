@@ -10,6 +10,7 @@
 @import AVFoundation;
 @import AVKit;
 #import "SFUtilities.h"
+#import "SFCacheManager.h"
 
 @interface SFMovieDetailVC ()
 @property (weak, nonatomic) IBOutlet UILabel *movieName;
@@ -78,9 +79,8 @@
     controller.player = player;
 }
 
-
--(void)favoriteAction
-{
+-(void)favoriteAction {
+    [[SFCacheManager sharedManager] toggleFavoriteMovie:self.selectedMovie];
 }
 
 -(NSString *)millsToDurationString:(NSNumber *)timeInSeconds {

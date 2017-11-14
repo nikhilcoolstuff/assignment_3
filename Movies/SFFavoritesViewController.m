@@ -74,8 +74,6 @@
     cell.releaseDate.text = [NSLocalizedString(@"Release_date",nil) stringByAppendingString:[SFUtilities formateDateString:movie.releaseDate]];
     cell.movieName.text = movie.trackName;
     cell.movieDetail.text = movie.shortDescription.length > 0 ? movie.shortDescription : movie.longDescription;
-    cell.favButton.tag = indexPath.row;
-    [cell.favButton addTarget:self action:@selector(favoriteAction:) forControlEvents:UIControlEventTouchUpInside];
     
     // load any previously cached images
     if (movie.thumbnail) {

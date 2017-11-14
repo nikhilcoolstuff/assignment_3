@@ -89,7 +89,7 @@
     cell.movieDetail.text = movie.shortDescription.length > 0 ? movie.shortDescription : movie.longDescription;
     cell.favButton.tag = indexPath.row;
     if ([[SFCacheManager sharedManager].favoritesLookupSet containsObject:movie.trackId]) {
-        [cell.favButton setImage:[UIImage imageNamed:@"icons8-heart-filled"] forState:UIControlStateNormal];
+        [cell.favButton setImage:[UIImage imageNamed:@"icons8-heart-filled-red"] forState:UIControlStateNormal];
     } else {
         [cell.favButton setImage:[UIImage imageNamed:@"icons8-heart"] forState:UIControlStateNormal];
     }
@@ -141,7 +141,7 @@
     if ([[SFCacheManager sharedManager].favoritesLookupSet containsObject:movie.trackId]) {
         [sender setImage:[UIImage imageNamed:@"icons8-heart"] forState:UIControlStateNormal];
     } else {
-        [sender setImage:[UIImage imageNamed:@"icons8-heart-filled"] forState:UIControlStateNormal];
+        [sender setImage:[UIImage imageNamed:@"icons8-heart-filled-red"] forState:UIControlStateNormal];
     }
 
     [[SFCacheManager sharedManager] toggleFavoriteMovie:movie];

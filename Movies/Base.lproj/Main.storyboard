@@ -344,7 +344,30 @@
                     <view key="view" contentMode="scaleToFill" id="0nA-Ok-rCB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="minions" translatesAutoresizingMaskIntoConstraints="NO" id="tOk-ug-JcM">
+                                <rect key="frame" x="10" y="104" width="355" height="214"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="214" id="jDO-uw-RyC"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This section reserved for any default views when user lands on the page. Search for movies in the search bar. " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KSX-q0-rnn">
+                                <rect key="frame" x="20" y="328" width="335" height="270"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="tOk-ug-JcM" firstAttribute="leading" secondItem="IOf-83-XId" secondAttribute="leading" constant="10" id="4zv-a9-vL1"/>
+                            <constraint firstItem="KSX-q0-rnn" firstAttribute="leading" secondItem="IOf-83-XId" secondAttribute="leading" constant="20" id="Cm0-uu-bQi"/>
+                            <constraint firstItem="IOf-83-XId" firstAttribute="trailing" secondItem="tOk-ug-JcM" secondAttribute="trailing" constant="10" id="JOR-xH-2Iw"/>
+                            <constraint firstItem="IOf-83-XId" firstAttribute="trailing" secondItem="KSX-q0-rnn" secondAttribute="trailing" constant="20" id="OHq-o3-M9Z"/>
+                            <constraint firstItem="tOk-ug-JcM" firstAttribute="top" secondItem="IOf-83-XId" secondAttribute="top" constant="40" id="Z5K-gW-pMu"/>
+                            <constraint firstItem="KSX-q0-rnn" firstAttribute="top" secondItem="tOk-ug-JcM" secondAttribute="bottom" constant="10" id="n9d-Dm-s9f"/>
+                            <constraint firstItem="IOf-83-XId" firstAttribute="bottom" secondItem="KSX-q0-rnn" secondAttribute="bottom" constant="20" id="uue-Ge-X77"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="IOf-83-XId"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Movies" id="X6F-8D-caz"/>
@@ -355,7 +378,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QcE-VT-sBt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1492" y="-386"/>
+            <point key="canvasLocation" x="1492" y="-386.35682158920542"/>
         </scene>
         <!--Movie DetailVC-->
         <scene sceneID="nY1-TJ-fJn">
@@ -394,7 +417,7 @@
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movie Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v0v-td-gKd">
                                                             <rect key="frame" x="0.0" y="0.0" width="292" height="20"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -440,8 +463,8 @@
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="detail" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="12" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EnC-5A-alu">
                                                     <rect key="frame" x="125" y="10" width="245" height="139"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -466,21 +489,21 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="csF-Q4-fbp">
                                                     <rect key="frame" x="10" y="10" width="355" height="79.5"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Direct By:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EdM-UO-NCB">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Directed By:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EdM-UO-NCB">
                                                             <rect key="frame" x="0.0" y="0.0" width="355" height="23"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
                                                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D3d-w6-DPt">
                                                             <rect key="frame" x="0.0" y="28" width="355" height="23.5"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
                                                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j8M-C6-oGp">
                                                             <rect key="frame" x="0.0" y="56.5" width="355" height="23"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
                                                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -565,6 +588,6 @@
         <image name="minions" width="850" height="1200"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="8S1-rE-vQp"/>
+        <segue reference="Oxs-u0-tnW"/>
     </inferredMetricsTieBreakers>
 </document>
