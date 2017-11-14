@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		030DEB5B1FBAA9320076E853 /* SFSearchResultsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 030DEB5A1FBAA9320076E853 /* SFSearchResultsController.m */; };
 		B96E70FA1FBA32B8009630ED /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B96E70F91FBA32B8009630ED /* AppDelegate.m */; };
 		B96E70FD1FBA32B8009630ED /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B96E70FC1FBA32B8009630ED /* ViewController.m */; };
 		B96E71001FBA32B8009630ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B96E70FE1FBA32B8009630ED /* Main.storyboard */; };
@@ -19,7 +20,6 @@
 		B96E712F1FBA3D0A009630ED /* SFMoviesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B96E712E1FBA3D0A009630ED /* SFMoviesViewController.m */; };
 		B96E71321FBA3D1B009630ED /* SFFavoritesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B96E71311FBA3D1B009630ED /* SFFavoritesViewController.m */; };
 		B96E71351FBA3D2C009630ED /* SFSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B96E71341FBA3D2C009630ED /* SFSettingsViewController.m */; };
-		B96E71381FBA5A79009630ED /* SFSearchResultsController.m in Sources */ = {isa = PBXBuildFile; fileRef = B96E71371FBA5A79009630ED /* SFSearchResultsController.m */; };
 		B96E713B1FBA6549009630ED /* SFNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B96E713A1FBA6549009630ED /* SFNetworkManager.m */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		030DEB591FBAA9320076E853 /* SFSearchResultsController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SFSearchResultsController.h; sourceTree = "<group>"; };
+		030DEB5A1FBAA9320076E853 /* SFSearchResultsController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SFSearchResultsController.m; sourceTree = "<group>"; };
 		B96E70F51FBA32B8009630ED /* Movies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Movies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B96E70F81FBA32B8009630ED /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B96E70F91FBA32B8009630ED /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -65,8 +67,6 @@
 		B96E71311FBA3D1B009630ED /* SFFavoritesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SFFavoritesViewController.m; sourceTree = "<group>"; };
 		B96E71331FBA3D2C009630ED /* SFSettingsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SFSettingsViewController.h; sourceTree = "<group>"; };
 		B96E71341FBA3D2C009630ED /* SFSettingsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SFSettingsViewController.m; sourceTree = "<group>"; };
-		B96E71361FBA5A79009630ED /* SFSearchResultsController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SFSearchResultsController.h; sourceTree = "<group>"; };
-		B96E71371FBA5A79009630ED /* SFSearchResultsController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SFSearchResultsController.m; sourceTree = "<group>"; };
 		B96E71391FBA6549009630ED /* SFNetworkManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SFNetworkManager.h; sourceTree = "<group>"; };
 		B96E713A1FBA6549009630ED /* SFNetworkManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SFNetworkManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -123,11 +123,9 @@
 				B96E70F91FBA32B8009630ED /* AppDelegate.m */,
 				B96E70FB1FBA32B8009630ED /* ViewController.h */,
 				B96E70FC1FBA32B8009630ED /* ViewController.m */,
-				B96E712D1FBA3D0A009630ED /* SFMoviesViewController.h */,
 				B96E71391FBA6549009630ED /* SFNetworkManager.h */,
 				B96E713A1FBA6549009630ED /* SFNetworkManager.m */,
-				B96E71361FBA5A79009630ED /* SFSearchResultsController.h */,
-				B96E71371FBA5A79009630ED /* SFSearchResultsController.m */,
+				B96E712D1FBA3D0A009630ED /* SFMoviesViewController.h */,
 				B96E712E1FBA3D0A009630ED /* SFMoviesViewController.m */,
 				B96E71301FBA3D1B009630ED /* SFFavoritesViewController.h */,
 				B96E71311FBA3D1B009630ED /* SFFavoritesViewController.m */,
@@ -136,6 +134,8 @@
 				B96E712A1FBA36A1009630ED /* SFApiManager.h */,
 				B96E712B1FBA36A1009630ED /* SFApiManager.m */,
 				B96E70FE1FBA32B8009630ED /* Main.storyboard */,
+				030DEB591FBAA9320076E853 /* SFSearchResultsController.h */,
+				030DEB5A1FBAA9320076E853 /* SFSearchResultsController.m */,
 				B96E71011FBA32B8009630ED /* Assets.xcassets */,
 				B96E71031FBA32B8009630ED /* LaunchScreen.storyboard */,
 				B96E71061FBA32B8009630ED /* Info.plist */,
@@ -298,7 +298,7 @@
 				B96E70FD1FBA32B8009630ED /* ViewController.m in Sources */,
 				B96E713B1FBA6549009630ED /* SFNetworkManager.m in Sources */,
 				B96E71321FBA3D1B009630ED /* SFFavoritesViewController.m in Sources */,
-				B96E71381FBA5A79009630ED /* SFSearchResultsController.m in Sources */,
+				030DEB5B1FBAA9320076E853 /* SFSearchResultsController.m in Sources */,
 				B96E71081FBA32B8009630ED /* main.m in Sources */,
 				B96E712F1FBA3D0A009630ED /* SFMoviesViewController.m in Sources */,
 				B96E70FA1FBA32B8009630ED /* AppDelegate.m in Sources */,

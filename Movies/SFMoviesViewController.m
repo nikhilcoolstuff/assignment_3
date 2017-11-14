@@ -21,11 +21,10 @@
     [super viewDidLoad];
     self.navigationItem.title = @"Movies";
     self.navigationController.navigationBar.prefersLargeTitles = YES;
-    self.searchResultsVC = [[SFSearchResultsController alloc] init];
+    self.searchResultsVC = [[self storyboard] instantiateViewControllerWithIdentifier:@"SearchResultsVC"];
     self.navigationItem.searchController = [[UISearchController alloc] initWithSearchResultsController:self.searchResultsVC];
     self.networkManager = [[SFNetworkManager alloc] init];
     [self.networkManager callAPIforSearchString:@"test"]; 
-    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
