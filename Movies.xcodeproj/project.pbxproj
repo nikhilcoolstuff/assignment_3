@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B94A00741FBAB7FF00CB032B /* SFMovie.m in Sources */ = {isa = PBXBuildFile; fileRef = B94A00731FBAB7FF00CB032B /* SFMovie.m */; };
 		B96E70FA1FBA32B8009630ED /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B96E70F91FBA32B8009630ED /* AppDelegate.m */; };
 		B96E70FD1FBA32B8009630ED /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B96E70FC1FBA32B8009630ED /* ViewController.m */; };
 		B96E71001FBA32B8009630ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B96E70FE1FBA32B8009630ED /* Main.storyboard */; };
@@ -41,6 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B94A00721FBAB7FF00CB032B /* SFMovie.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SFMovie.h; sourceTree = "<group>"; };
+		B94A00731FBAB7FF00CB032B /* SFMovie.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SFMovie.m; sourceTree = "<group>"; };
 		B96E70F51FBA32B8009630ED /* Movies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Movies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B96E70F81FBA32B8009630ED /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B96E70F91FBA32B8009630ED /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -125,6 +128,8 @@
 				B96E70FC1FBA32B8009630ED /* ViewController.m */,
 				B96E712D1FBA3D0A009630ED /* SFMoviesViewController.h */,
 				B96E71391FBA6549009630ED /* SFNetworkManager.h */,
+				B94A00721FBAB7FF00CB032B /* SFMovie.h */,
+				B94A00731FBAB7FF00CB032B /* SFMovie.m */,
 				B96E713A1FBA6549009630ED /* SFNetworkManager.m */,
 				B96E71361FBA5A79009630ED /* SFSearchResultsController.h */,
 				B96E71371FBA5A79009630ED /* SFSearchResultsController.m */,
@@ -304,6 +309,7 @@
 				B96E70FA1FBA32B8009630ED /* AppDelegate.m in Sources */,
 				B96E71351FBA3D2C009630ED /* SFSettingsViewController.m in Sources */,
 				B96E712C1FBA36A1009630ED /* SFApiManager.m in Sources */,
+				B94A00741FBAB7FF00CB032B /* SFMovie.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

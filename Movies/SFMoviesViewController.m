@@ -24,8 +24,10 @@
     self.searchResultsVC = [[SFSearchResultsController alloc] init];
     self.navigationItem.searchController = [[UISearchController alloc] initWithSearchResultsController:self.searchResultsVC];
     self.networkManager = [[SFNetworkManager alloc] init];
-    [self.networkManager callAPIforSearchString:@"test"]; 
-    // Do any additional setup after loading the view.
+    [self.networkManager fetchSearchResultsForString:@"Jackksjdnfjksndfkjn ksjdnfjksndfkjnsdfkjn" completionHandler:^(NSArray *movies, NSString *errorString) {
+        NSLog(@"movies %@", movies);
+        NSLog(@"error string %@", errorString);
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
