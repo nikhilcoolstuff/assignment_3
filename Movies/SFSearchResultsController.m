@@ -53,6 +53,12 @@
     return cell;
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    
+    
+}
+
 #pragma mark - Local Methods
 
 -(void)favouriteClicked:(UIButton*)sender
