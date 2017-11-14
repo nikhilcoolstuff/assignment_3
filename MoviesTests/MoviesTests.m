@@ -8,15 +8,21 @@
 
 #import <XCTest/XCTest.h>
 #import "SFNetworkManager.h"
+#import "SFCacheManager.h"
+#import "SFMovie.h"
 
 @interface MoviesTests : XCTestCase
-@property (nonatomic) S *vcToTest;
+@property (nonatomic) SFNetworkManager *networkLayer;
+@property (nonatomic) SFCacheManager *cacheManager;
 @end
 
 @implementation MoviesTests
 
 - (void)setUp {
     [super setUp];
+    self.networkLayer = [[SFNetworkManager alloc] init];
+    self.cacheManager = [SFCacheManager sharedManager];
+    
     // Put setup code here. This method is called before the invocation of each test method in the class.
 }
 
@@ -26,8 +32,17 @@
 }
 
 - (void)testBasicSearch {
-    // This is an example of a functional test case.
-    // Use XCTAssert and related functions to verify your tests produce the correct results.
+    [self.networkLayer fetchSearchResultsForString:@"Brad" completionHandler:^(NSArray *movies, NSString *errorString) {
+        XCTAssertGreaterThan(movies.count, 0);
+    }];
+}
+
+- (void)testToggleFavorite {
+    SFMovie *movie = [[SFMovie alloc] init];
+    movie.trackId = @(12345);
+    [[SFCacheManager sharedManager] toggleFavoriteMovie:movie];
+    XCTAssertGreaterThan([SFCacheManager sharedManager].favoritedMovies.count, 0);
+    XCTAssertGreaterThan([SFCacheManager sharedManager].favoritesLookupSet.count, 0);
 }
 
 - (void)testPerformanceExample {
