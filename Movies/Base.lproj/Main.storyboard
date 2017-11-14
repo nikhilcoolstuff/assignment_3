@@ -21,7 +21,7 @@
         <scene sceneID="N6R-8A-rr0">
             <objects>
                 <tableViewController id="DCg-lY-c41" customClass="SFFavoritesViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="tl4-do-YjH">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="160" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="tl4-do-YjH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -105,21 +105,7 @@
                                                 </stackView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kA6-4Z-Jzy">
                                                     <rect key="frame" x="324" y="0.0" width="35" height="104.5"/>
-                                                    <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d83-Kw-oW8">
-                                                            <rect key="frame" x="7.5" y="42" width="21.5" height="21"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" secondItem="d83-Kw-oW8" secondAttribute="height" multiplier="1:1" id="UMV-gP-tUH"/>
-                                                            </constraints>
-                                                            <state key="normal" image="icons8-heart"/>
-                                                        </button>
-                                                    </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <constraints>
-                                                        <constraint firstItem="d83-Kw-oW8" firstAttribute="width" secondItem="kA6-4Z-Jzy" secondAttribute="width" multiplier="0.6" id="18n-Pn-jfm"/>
-                                                        <constraint firstItem="d83-Kw-oW8" firstAttribute="centerY" secondItem="kA6-4Z-Jzy" secondAttribute="centerY" id="5hA-V5-zbY"/>
-                                                        <constraint firstItem="d83-Kw-oW8" firstAttribute="centerX" secondItem="kA6-4Z-Jzy" secondAttribute="centerX" id="FEp-Uz-HiH"/>
-                                                    </constraints>
                                                 </view>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -154,7 +140,6 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="directedBy" destination="vwG-r6-8MF" id="K9e-GE-qmP"/>
-                                    <outlet property="favButton" destination="d83-Kw-oW8" id="8LQ-oW-tnZ"/>
                                     <outlet property="movieDetail" destination="wYk-UW-r7W" id="icy-SU-tBm"/>
                                     <outlet property="movieName" destination="AFy-hB-s84" id="omv-D5-00e"/>
                                     <outlet property="poster" destination="C4a-D8-DkJ" id="x32-sH-O5m"/>
@@ -170,6 +155,9 @@
                     <tabBarItem key="tabBarItem" title="Favorites" id="hfu-vB-Z8C"/>
                     <navigationItem key="navigationItem" id="KBS-ay-W6c"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <segue destination="d8B-aC-wUi" kind="show" identifier="fav_movie_detail_segue" id="8S1-rE-vQp"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Hs-fo-CeJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -574,4 +562,7 @@
         <image name="icons8-movie-filled" width="25" height="25"/>
         <image name="minions" width="850" height="1200"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="8S1-rE-vQp"/>
+    </inferredMetricsTieBreakers>
 </document>
