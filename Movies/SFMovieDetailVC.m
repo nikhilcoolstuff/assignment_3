@@ -42,11 +42,22 @@
 #pragma mark - Local Methods
 
 -(void) navigationSetup {
-    self.navigationItem.title = NSLocalizedString(@"Movie_Detail",nil) ;
-    UIBarButtonItem *_btn=[[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"icons8-heart"]
+    self.navigationItem.title = NSLocalizedString(@"Movie_Detail",nil);
+    [self createBarButtonItem];
+}
+
+-(void) createBarButtonItem {
+    NSString *imageName;
+    if ([[SFCacheManager sharedManager].favoritesLookupSet containsObject:self.selectedMovie.trackId]) {
+        imageName = @"icons8-heart-filled-red"; 
+    } else {
+        imageName = @"icons8-heart";
+    }
+    
+    UIBarButtonItem *_btn=[[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:imageName]
                                                           style:UIBarButtonItemStylePlain
                                                          target:self
-                                                         action:@selector(favoriteAction)];
+                                                         action:@selector(favoriteAction:)];
     self.navigationItem.rightBarButtonItem = _btn;
 }
 
@@ -79,8 +90,9 @@
     controller.player = player;
 }
 
--(void)favoriteAction {
+-(void)favoriteAction: (UIBarButtonItem *) sender {
     [[SFCacheManager sharedManager] toggleFavoriteMovie:self.selectedMovie];
+    [self createBarButtonItem];
 }
 
 -(NSString *)millsToDurationString:(NSNumber *)timeInSeconds {
