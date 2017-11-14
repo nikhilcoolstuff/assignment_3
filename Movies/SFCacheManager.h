@@ -13,7 +13,7 @@
 + (instancetype)sharedManager;
 
 @property (nonatomic, strong) NSMutableArray *favoritedMovies;
-
+@property (nonatomic, strong) NSMutableSet *favoritesLookupSet;
 -(void) favoriteMovie: (SFMovie *) movie;
 
 @end

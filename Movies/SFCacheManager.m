@@ -31,12 +31,14 @@
     if (movie)
         [self.favoritedMovies addObject: movie];
     [NSKeyedArchiver archiveRootObject:self.favoritedMovies toFile:[self getCachePath]];
+    self.favoritesLookupSet = [self.favoritedMovies valueForKey:@"trackId"];
 }
 
 -(void) loadFavoritedMovies {
     self.favoritedMovies = [NSKeyedUnarchiver unarchiveObjectWithFile:[self getCachePath]];
     if (!self.favoritedMovies) {
         self.favoritedMovies = [NSMutableArray new];
+        self.favoritesLookupSet = [NSMutableSet new];
     }
 }
 
