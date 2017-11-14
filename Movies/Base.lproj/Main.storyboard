@@ -18,21 +18,35 @@
     </customFonts>
     <scenes>
         <!--Favorites-->
-        <scene sceneID="Dgr-cT-mh1">
+        <scene sceneID="N6R-8A-rr0">
             <objects>
-                <viewController id="cno-VZ-k7h" customClass="SFFavoritesViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="0aA-e8-5wE">
+                <tableViewController id="DCg-lY-c41" customClass="SFFavoritesViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="tl4-do-YjH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <viewLayoutGuide key="safeArea" id="Yx5-4e-6Y7"/>
-                    </view>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="favoritesCell" id="f5D-Wz-HPO">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="f5D-Wz-HPO" id="8py-AO-xkg">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="DCg-lY-c41" id="8jy-rr-7rS"/>
+                            <outlet property="delegate" destination="DCg-lY-c41" id="g2k-Y9-tCa"/>
+                        </connections>
+                    </tableView>
                     <tabBarItem key="tabBarItem" title="Favorites" id="hfu-vB-Z8C"/>
-                    <navigationItem key="navigationItem" id="GE0-up-JeA"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="OoI-56-Rgt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                    <navigationItem key="navigationItem" id="KBS-ay-W6c"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Hs-fo-CeJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1492" y="409.7451274362819"/>
+            <point key="canvasLocation" x="1492" y="410"/>
         </scene>
         <!--Movies-->
         <scene sceneID="SIq-vP-3Yd">
@@ -398,7 +412,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="cno-VZ-k7h" kind="relationship" relationship="rootViewController" id="vQS-EA-RYN"/>
+                        <segue destination="DCg-lY-c41" kind="relationship" relationship="rootViewController" id="7Fg-b1-pZI"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YPe-0G-Wv4" userLabel="First Responder" sceneMemberID="firstResponder"/>
