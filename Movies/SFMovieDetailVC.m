@@ -44,7 +44,7 @@
     UIBarButtonItem *_btn=[[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"icons8-heart"]
                                                           style:UIBarButtonItemStylePlain
                                                          target:self
-                                                         action:@selector(favouriteClicked)];
+                                                         action:@selector(favoriteAction)];
     self.navigationItem.rightBarButtonItem = _btn;
 }
 -(void) intialDataSetup {
@@ -68,7 +68,7 @@
 }
 
 
--(void)favouriteClicked
+-(void)favoriteAction
 {
 }
 

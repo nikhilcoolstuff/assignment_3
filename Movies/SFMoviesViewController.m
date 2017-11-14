@@ -11,7 +11,6 @@
 #import "SFNetworkManager.h"
 #import "SFMovieDetailVC.h"
 
-
 @interface SFMoviesViewController ()<SFSearchResultsDelegate, UISearchBarDelegate>{
     SFMovie *searchSelectedMovie;
 }
@@ -35,7 +34,6 @@
     self.navigationItem.searchController = self.searchController;
     self.definesPresentationContext = YES;
     self.networkManager = [[SFNetworkManager alloc] init];
-    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -55,7 +53,7 @@
     [self.networkManager fetchSearchResultsForString:self.searchController.searchBar.text completionHandler:^(NSArray *movies, NSString *errorString) {
         if (errorString)
             // TODO show error
-            NSLog(errorString);
+            NSLog(@"%@", errorString);
         else
             [self.searchResultsVC updateSearchResultsForMovies:movies];
     }];
@@ -78,9 +76,8 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
   if ([segue.identifier isEqualToString:@"movie_detail_segue"]) {
       SFMovieDetailVC *movieDetailVC = (SFMovieDetailVC *) segue.destinationViewController;
-      movieDetailVC.selectedMovie = searchSelectedMovie ;
+      movieDetailVC.selectedMovie = searchSelectedMovie;
   }
 }
-
 
 @end

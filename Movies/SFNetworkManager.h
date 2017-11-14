@@ -12,6 +12,4 @@ typedef void (^completionHandler)(NSArray *movies, NSString *errorString);
 
 @interface SFNetworkManager : NSObject
 -(void) fetchSearchResultsForString: (NSString *) searchString completionHandler: (completionHandler) completionHandler;
-- (NSString*)readStringFromFile ;
-- (void)writeStringToFile:(NSString*)aString;
 @end

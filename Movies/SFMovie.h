@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 @import UIKit;
 
-@interface SFMovie : NSObject
+@interface SFMovie : NSObject<NSCoding>
 
 @property (nonatomic, copy) NSString *wrapperType;
 @property (nonatomic, copy) NSString *kind;
