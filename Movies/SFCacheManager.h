@@ -14,6 +14,6 @@
 
 @property (nonatomic, strong) NSMutableArray *favoritedMovies;
 @property (nonatomic, strong) NSMutableSet *favoritesLookupSet;
--(void) favoriteMovie: (SFMovie *) movie;
+-(void) toggleFavoriteMovie: (SFMovie *) movie;
 
 @end

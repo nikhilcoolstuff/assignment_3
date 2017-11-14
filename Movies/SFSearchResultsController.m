@@ -63,7 +63,6 @@
     SFSearchResultCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SearchResultCell" forIndexPath:indexPath];
     SFMovie *movie = self.privateMovies[indexPath.row];
     
-    //cell.poster = "";
     cell.directedBy.text =[NSLocalizedString(@"Directed_by",nil) stringByAppendingString:movie.artistName];
     cell.releaseDate.text = [NSLocalizedString(@"Release_date",nil) stringByAppendingString:[SFUtilities formateDateString:movie.releaseDate]];
     cell.movieName.text = movie.trackName;
@@ -117,9 +116,15 @@
 
 -(void)favoriteAction:(UIButton*)sender
 {
-    [sender setImage:[UIImage imageNamed:@"icons8-heart-filled"] forState:UIControlStateNormal];
     SFMovie *movie = self.privateMovies[sender.tag];
-    [[SFCacheManager sharedManager] favoriteMovie:movie];
+
+    if ([[SFCacheManager sharedManager].favoritesLookupSet containsObject:movie.trackId]) {
+        [sender setImage:[UIImage imageNamed:@"icons8-heart"] forState:UIControlStateNormal];
+    } else {
+        [sender setImage:[UIImage imageNamed:@"icons8-heart-filled"] forState:UIControlStateNormal];
+    }
+
+    [[SFCacheManager sharedManager] toggleFavoriteMovie:movie];
 }
 
 @end

@@ -81,7 +81,8 @@
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
+        [[SFCacheManager sharedManager] toggleFavoriteMovie:self.favoriteMovies[indexPath.row]];
+        self.favoriteMovies = [SFCacheManager sharedManager].favoritedMovies;
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }
 }
@@ -96,7 +97,7 @@
 
 -(void)favoriteAction:(UIButton*)sender {
     SFMovie *movie = self.favoriteMovies[sender.tag];
-    [[SFCacheManager sharedManager] favoriteMovie:movie];
+    [[SFCacheManager sharedManager] toggleFavoriteMovie:movie];
 }
 
 #pragma mark - Navigation

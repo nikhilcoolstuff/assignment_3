@@ -27,10 +27,16 @@
     return self;
 }
 
--(void) favoriteMovie: (SFMovie *) movie {
+-(void) toggleFavoriteMovie: (SFMovie *) movie {
     // toggle favorite
     if([self.favoritesLookupSet containsObject:movie.trackId]) {
-        [self.favoritedMovies removeObject:movie];
+        // find matching movie and remove
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"trackId==%@",movie.trackId];
+        NSArray *results = [self.favoritedMovies filteredArrayUsingPredicate:predicate];
+        if (results.count > 0) {
+            SFMovie *movieToRemove = (SFMovie *)results[0];
+            [self.favoritedMovies removeObject:movieToRemove];
+        }
     } else {
         [self.favoritedMovies addObject: movie];
     }
@@ -40,6 +46,7 @@
 
 -(void) loadFavoritedMovies {
     self.favoritedMovies = [NSKeyedUnarchiver unarchiveObjectWithFile:[self getCachePath]];
+    self.favoritesLookupSet = [self.favoritedMovies valueForKey:@"trackId"];
     if (!self.favoritedMovies) {
         self.favoritedMovies = [NSMutableArray new];
         self.favoritesLookupSet = [NSMutableSet new];

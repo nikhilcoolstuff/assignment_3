@@ -14,7 +14,7 @@
     self = [super init];
     if (self) {
         _wrapperType = dict[@"wrapperType"];
-        _kind = dict[@"wrapperType"];
+        _kind = dict[@"kind"];
         _trackId = dict[@"trackId"];
         _artistName = dict[@"artistName"];
         _trackName = dict[@"trackName"];
@@ -50,7 +50,7 @@
     self = [super init];
     if (self) {
         _wrapperType = [coder decodeObjectForKey:@"wrapperType"];
-        _kind = [coder decodeObjectForKey:@"wrapperType"];
+        _kind = [coder decodeObjectForKey:@"kind"];
         _trackId = [coder decodeObjectForKey:@"trackId"];
         _artistName = [coder decodeObjectForKey:@"artistName"];
         _trackName = [coder decodeObjectForKey:@"trackName"];
@@ -83,6 +83,7 @@
 -(void)encodeWithCoder:(NSCoder *)aCoder {
     [aCoder encodeObject:self.wrapperType forKey:@"wrapperType"];
     [aCoder encodeObject:self.kind forKey:@"kind"];
+    [aCoder encodeObject:self.trackId forKey:@"trackId"];
     [aCoder encodeObject:self.artistName forKey:@"artistName"];
     [aCoder encodeObject:self.trackName forKey:@"trackName"];
     [aCoder encodeObject:self.trackCensoredName forKey:@"trackCensoredName"];
