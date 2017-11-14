@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+typedef void (^completionHandler)(NSArray *movies, NSString *errorString);
+
 @interface SFNetworkManager : NSObject
--(void) callAPIforSearchString: (NSString *) searchString;
+-(void) fetchSearchResultsForString: (NSString *) searchString completionHandler: (completionHandler) completionHandler;
 @end
