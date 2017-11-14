@@ -49,7 +49,7 @@
 -(void) createBarButtonItem {
     NSString *imageName;
     if ([[SFCacheManager sharedManager].favoritesLookupSet containsObject:self.selectedMovie.trackId]) {
-        imageName = @"icons8-heart-filled-red"; 
+        imageName = @"icons8-heart-filled-red";
     } else {
         imageName = @"icons8-heart";
     }
