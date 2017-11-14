@@ -11,7 +11,7 @@
 
 
 @protocol SFSearchResultsDelegate <NSObject>
-- (void) didSelectsearchResultCell:(SFMovie *)selectedMovie;
+- (void) didSelectSearchResultCellForMovie:(SFMovie *)selectedMovie;
 @end
 
 @interface SFSearchResultsController : UITableViewController

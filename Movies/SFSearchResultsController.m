@@ -82,8 +82,8 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     SFMovie *movie = self.privateMovies[indexPath.row];
-    if ([_delegate respondsToSelector:@selector(didSelectsearchResultCell:)]){
-        [_delegate didSelectsearchResultCell:movie];
+    if ([_delegate respondsToSelector:@selector(didSelectSearchResultCellForMovie:)]){
+        [_delegate didSelectSearchResultCellForMovie:movie];
     }
 }
 

@@ -67,8 +67,8 @@
 
 #pragma mark - SFSearchResultsDelegate
 
-- (void) didSelectsearchResultCell:(SFMovie *)selectedMovie{
-    searchSelectedMovie = selectedMovie ;
+- (void) didSelectSearchResultCellForMovie:(SFMovie *)selectedMovie{
+    searchSelectedMovie = selectedMovie;
     [self performSegueWithIdentifier:@"movie_detail_segue" sender:nil];
 }
 
