@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+@import UIKit;
 
 @interface SFMovie : NSObject
 
@@ -37,6 +38,8 @@
 @property (nonatomic, copy) NSString *contentAdvisoryRating;
 @property (nonatomic, copy) NSString *shortDescription;
 @property (nonatomic, copy) NSString *longDescription;
+
+@property (nonatomic, strong) UIImage *thumbnail;
 
 -(id) initWithDictionary: (NSDictionary *) dict; 
 

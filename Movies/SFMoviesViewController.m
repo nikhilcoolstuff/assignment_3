@@ -12,7 +12,7 @@
 #import "SFMovieDetailVC.h"
 
 
-@interface SFMoviesViewController ()<SFSearchResultsDelegate>{
+@interface SFMoviesViewController ()<SFSearchResultsDelegate, UISearchBarDelegate>{
     SFMovie *searchSelectedMovie;
 }
 @property (nonatomic, strong) SFSearchResultsController *searchResultsVC;
@@ -27,9 +27,10 @@
     self.navigationItem.title = @"Movies";
     self.navigationController.navigationBar.prefersLargeTitles = YES;
     self.searchResultsVC = [self.storyboard instantiateViewControllerWithIdentifier:@"SearchResultsVC"];
-    self.searchController = [[UISearchController alloc] initWithSearchResultsController:self.searchResultsVC];
     self.searchResultsVC.delegate = self;
+    self.searchController = [[UISearchController alloc] initWithSearchResultsController:self.searchResultsVC];
     self.searchController.searchBar.placeholder = @"Search Movies";
+    self.searchController.searchBar.delegate = self;
     self.searchController.searchResultsUpdater = self;
     self.navigationItem.searchController = self.searchController;
     self.definesPresentationContext = YES;
@@ -51,15 +52,17 @@
     }];
 }
 
+#pragma mark UISearchBar delegate
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
+    [self.searchResultsVC cancelUpdatingResults];
+}
+
 #pragma mark - SFSearchResultsDelegate
 
 - (void) didSelectsearchResultCell:(SFMovie *)selectedMovie{
     searchSelectedMovie = selectedMovie ;
     [self performSegueWithIdentifier:@"movie_detail_segue" sender:nil];
-
 }
-
-
 
 #pragma mark - Navigation
 
