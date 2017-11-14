@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		030DEB5B1FBAA9320076E853 /* SFSearchResultsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 030DEB5A1FBAA9320076E853 /* SFSearchResultsController.m */; };
+		030DEB5E1FBAB9E30076E853 /* SFSearchResultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 030DEB5D1FBAB9E30076E853 /* SFSearchResultCell.m */; };
 		B96E70FA1FBA32B8009630ED /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B96E70F91FBA32B8009630ED /* AppDelegate.m */; };
 		B96E70FD1FBA32B8009630ED /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B96E70FC1FBA32B8009630ED /* ViewController.m */; };
 		B96E71001FBA32B8009630ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B96E70FE1FBA32B8009630ED /* Main.storyboard */; };
@@ -43,6 +44,8 @@
 /* Begin PBXFileReference section */
 		030DEB591FBAA9320076E853 /* SFSearchResultsController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SFSearchResultsController.h; sourceTree = "<group>"; };
 		030DEB5A1FBAA9320076E853 /* SFSearchResultsController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SFSearchResultsController.m; sourceTree = "<group>"; };
+		030DEB5C1FBAB9E30076E853 /* SFSearchResultCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SFSearchResultCell.h; sourceTree = "<group>"; };
+		030DEB5D1FBAB9E30076E853 /* SFSearchResultCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SFSearchResultCell.m; sourceTree = "<group>"; };
 		B96E70F51FBA32B8009630ED /* Movies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Movies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B96E70F81FBA32B8009630ED /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B96E70F91FBA32B8009630ED /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -134,6 +137,8 @@
 				B96E712A1FBA36A1009630ED /* SFApiManager.h */,
 				B96E712B1FBA36A1009630ED /* SFApiManager.m */,
 				B96E70FE1FBA32B8009630ED /* Main.storyboard */,
+				030DEB5C1FBAB9E30076E853 /* SFSearchResultCell.h */,
+				030DEB5D1FBAB9E30076E853 /* SFSearchResultCell.m */,
 				030DEB591FBAA9320076E853 /* SFSearchResultsController.h */,
 				030DEB5A1FBAA9320076E853 /* SFSearchResultsController.m */,
 				B96E71011FBA32B8009630ED /* Assets.xcassets */,
@@ -304,6 +309,7 @@
 				B96E70FA1FBA32B8009630ED /* AppDelegate.m in Sources */,
 				B96E71351FBA3D2C009630ED /* SFSettingsViewController.m in Sources */,
 				B96E712C1FBA36A1009630ED /* SFApiManager.m in Sources */,
+				030DEB5E1FBAB9E30076E853 /* SFSearchResultCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

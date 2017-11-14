@@ -72,7 +72,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="SearchResultCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchResultCell" rowHeight="140" id="4G4-aA-kG7">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="SearchResultCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchResultCell" rowHeight="140" id="4G4-aA-kG7" customClass="SFSearchResultCell">
                                 <rect key="frame" x="0.0" y="28" width="375" height="140"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4G4-aA-kG7" id="9DV-J2-Fxh">
@@ -152,18 +152,19 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B85-Gv-l5n">
                                                     <rect key="frame" x="313" y="0.0" width="46" height="90.5"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-heart" translatesAutoresizingMaskIntoConstraints="NO" id="B6v-Li-J7b">
-                                                            <rect key="frame" x="9.5" y="31.5" width="27.5" height="27.5"/>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cmc-v1-t6F">
+                                                            <rect key="frame" x="9.5" y="31.5" width="28" height="28"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" secondItem="B6v-Li-J7b" secondAttribute="height" multiplier="1:1" id="855-UN-6MC"/>
+                                                                <constraint firstAttribute="width" secondItem="cmc-v1-t6F" secondAttribute="height" multiplier="1:1" id="v7G-9j-JMY"/>
                                                             </constraints>
-                                                        </imageView>
+                                                            <state key="normal" image="icons8-heart"/>
+                                                        </button>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
-                                                        <constraint firstItem="B6v-Li-J7b" firstAttribute="height" secondItem="B85-Gv-l5n" secondAttribute="width" multiplier="0.6" id="CaO-NC-S2z"/>
-                                                        <constraint firstItem="B6v-Li-J7b" firstAttribute="centerY" secondItem="B85-Gv-l5n" secondAttribute="centerY" id="Wju-Cg-aQs"/>
-                                                        <constraint firstItem="B6v-Li-J7b" firstAttribute="centerX" secondItem="B85-Gv-l5n" secondAttribute="centerX" id="l8G-2g-Cia"/>
+                                                        <constraint firstItem="cmc-v1-t6F" firstAttribute="width" secondItem="B85-Gv-l5n" secondAttribute="width" multiplier="0.6" id="7jz-GY-TTf"/>
+                                                        <constraint firstItem="cmc-v1-t6F" firstAttribute="centerX" secondItem="B85-Gv-l5n" secondAttribute="centerX" id="Bkl-ur-zS0"/>
+                                                        <constraint firstItem="cmc-v1-t6F" firstAttribute="centerY" secondItem="B85-Gv-l5n" secondAttribute="centerY" id="dzM-VG-CFt"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -197,6 +198,14 @@
                                         <constraint firstAttribute="trailing" secondItem="Aeo-GL-bFS" secondAttribute="trailing" constant="8" id="Z65-ce-AYf"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="directedBy" destination="ibs-Re-VsU" id="6dY-QZ-csp"/>
+                                    <outlet property="favButton" destination="cmc-v1-t6F" id="uWX-4B-n3U"/>
+                                    <outlet property="movieDetail" destination="E6M-en-1t0" id="tPy-2u-VAy"/>
+                                    <outlet property="movieName" destination="zUL-3R-c1g" id="GmM-zg-NBo"/>
+                                    <outlet property="poster" destination="lDF-67-Pbr" id="mBF-mg-bcy"/>
+                                    <outlet property="releaseDate" destination="UYD-bw-Zca" id="liU-YL-NC9"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

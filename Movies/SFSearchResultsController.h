@@ -2,7 +2,7 @@
 //  SFSearchResultsController.h
 //  Movies
 //
-//  Created by Alankar Muley on 11/14/17.
+//  Created by Nikhil Lele on 11/14/17.
 //  Copyright © 2017 Salesforce. All rights reserved.
 //
 

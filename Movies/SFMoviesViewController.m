@@ -23,6 +23,7 @@
     self.navigationController.navigationBar.prefersLargeTitles = YES;
     self.searchResultsVC = [[self storyboard] instantiateViewControllerWithIdentifier:@"SearchResultsVC"];
     self.navigationItem.searchController = [[UISearchController alloc] initWithSearchResultsController:self.searchResultsVC];
+    
     self.networkManager = [[SFNetworkManager alloc] init];
     [self.networkManager callAPIforSearchString:@"test"]; 
 }

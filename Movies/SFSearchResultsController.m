@@ -2,12 +2,12 @@
 //  SFSearchResultsController.m
 //  Movies
 //
-//  Created by Alankar Muley on 11/14/17.
+//  Created by Nikhil Lele on 11/14/17.
 //  Copyright © 2017 Salesforce. All rights reserved.
 //
 
 #import "SFSearchResultsController.h"
-
+#import "SFSearchResultCell.h"
 @interface SFSearchResultsController ()
 
 @end
@@ -31,8 +31,14 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SearchResultCell" forIndexPath:indexPath];
     
+    SFSearchResultCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SearchResultCell" forIndexPath:indexPath];
+    //cell.poster = "";
+    cell.directedBy.text =@"Directed by:";
+    cell.releaseDate.text = @"Release date:";
+    //cell.movieName.text = @"";
+    //cell.movieDetail.text = @"";
+    //favButton;
     return cell;
 }
 
