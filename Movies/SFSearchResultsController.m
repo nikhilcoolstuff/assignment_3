@@ -10,11 +10,13 @@
 #import "SFSearchResultCell.h"
 #import "SFNetworkManager.h"
 #import "SFImageDownloader.h"
+#import "SFCacheManager.h"
 
 @interface SFSearchResultsController ()
 @property (nonatomic, strong) NSArray *privateMovies;
 @property (nonatomic, strong) NSMutableDictionary *trackImageDownloadDict;
 @property (nonatomic, strong) SFNetworkManager *networkManager;
+@property (nonatomic, strong) SFCacheManager *fileManager;
 @end
 
 @implementation SFSearchResultsController
@@ -66,7 +68,7 @@
     cell.movieName.text = movie.trackName;
     cell.movieDetail.text = movie.shortDescription.length > 0 ? movie.shortDescription : movie.longDescription;
     cell.favButton.tag = indexPath.row;
-    [cell.favButton addTarget:self action:@selector(favouriteClicked:) forControlEvents:UIControlEventTouchUpInside];
+    [cell.favButton addTarget:self action:@selector(favoriteAction:) forControlEvents:UIControlEventTouchUpInside];
     
     // load any previously cached images
     if (movie.thumbnail) {
@@ -106,10 +108,10 @@
     }
 }
 
--(void)favouriteClicked:(UIButton*)sender
+-(void)favoriteAction:(UIButton*)sender
 {
     SFMovie *movie = self.privateMovies[sender.tag];
-    [self.networkManager  writeStringToFile:movie.trackName];
+    [[SFCacheManager sharedManager] favoriteMovie:movie];
 }
 
 -(NSString *)formateDateString:(NSString * )apiDate{

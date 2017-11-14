@@ -7,9 +7,10 @@
 //
 
 #import "SFFavoritesViewController.h"
+#import "SFCacheManager.h"
 
 @interface SFFavoritesViewController ()
-
+@property (nonatomic, strong) NSArray *favoriteMovies;
 @end
 
 @implementation SFFavoritesViewController
@@ -20,6 +21,12 @@
     self.navigationItem.title = NSLocalizedString(@"Favorites",nil);
     self.navigationController.navigationBar.prefersLargeTitles = YES;
 
+}
+
+-(void) viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    self.favoriteMovies = [[SFCacheManager sharedManager] getFavoriteMovies];
+    NSLog(@"test");
 }
 
 - (void)didReceiveMemoryWarning {

@@ -14,6 +14,7 @@
 		B94A00741FBAB7FF00CB032B /* SFMovie.m in Sources */ = {isa = PBXBuildFile; fileRef = B94A00731FBAB7FF00CB032B /* SFMovie.m */; };
 		B94A007C1FBB2D7500CB032B /* SFImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = B94A007B1FBB2D7500CB032B /* SFImageDownloader.m */; };
 		B94A007E1FBB36EC00CB032B /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = B94A007D1FBB36EB00CB032B /* placeholder.png */; };
+		B94A00811FBB464000CB032B /* SFCacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B94A00801FBB464000CB032B /* SFCacheManager.m */; };
 		B96E70FA1FBA32B8009630ED /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B96E70F91FBA32B8009630ED /* AppDelegate.m */; };
 		B96E71001FBA32B8009630ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B96E70FE1FBA32B8009630ED /* Main.storyboard */; };
 		B96E71021FBA32B8009630ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B96E71011FBA32B8009630ED /* Assets.xcassets */; };
@@ -60,6 +61,8 @@
 		B94A007A1FBB2D7500CB032B /* SFImageDownloader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SFImageDownloader.h; sourceTree = "<group>"; };
 		B94A007B1FBB2D7500CB032B /* SFImageDownloader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SFImageDownloader.m; sourceTree = "<group>"; };
 		B94A007D1FBB36EB00CB032B /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
+		B94A007F1FBB464000CB032B /* SFCacheManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SFCacheManager.h; sourceTree = "<group>"; };
+		B94A00801FBB464000CB032B /* SFCacheManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SFCacheManager.m; sourceTree = "<group>"; };
 		B96E70F51FBA32B8009630ED /* Movies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Movies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B96E70F81FBA32B8009630ED /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B96E70F91FBA32B8009630ED /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -159,6 +162,8 @@
 				B94A007A1FBB2D7500CB032B /* SFImageDownloader.h */,
 				B94A007B1FBB2D7500CB032B /* SFImageDownloader.m */,
 				B94A007D1FBB36EB00CB032B /* placeholder.png */,
+				B94A007F1FBB464000CB032B /* SFCacheManager.h */,
+				B94A00801FBB464000CB032B /* SFCacheManager.m */,
 			);
 			path = Movies;
 			sourceTree = "<group>";
@@ -327,6 +332,7 @@
 				B96E70FA1FBA32B8009630ED /* AppDelegate.m in Sources */,
 				B96E712C1FBA36A1009630ED /* SFApiManager.m in Sources */,
 				030DEB5E1FBAB9E30076E853 /* SFSearchResultCell.m in Sources */,
+				B94A00811FBB464000CB032B /* SFCacheManager.m in Sources */,
 				B94A00741FBAB7FF00CB032B /* SFMovie.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
