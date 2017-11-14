@@ -43,7 +43,15 @@
 }
 
 -(void)updateSearchResultsForSearchController:(UISearchController *)searchController {
-    [self.networkManager fetchSearchResultsForString:searchController.searchBar.text completionHandler:^(NSArray *movies, NSString *errorString) {
+    if (searchController.searchBar.text.length < 3)
+        return;
+    
+    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(requestNewDataFromServer) object:nil];
+    [self performSelector:@selector(requestNewDataFromServer) withObject:nil afterDelay:0.5f];
+}
+
+-(void) requestNewDataFromServer {
+    [self.networkManager fetchSearchResultsForString:self.searchController.searchBar.text completionHandler:^(NSArray *movies, NSString *errorString) {
         if (errorString)
             // TODO show error
             NSLog(errorString);

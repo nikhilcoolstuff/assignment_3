@@ -34,7 +34,8 @@
 
 // Cancel ongoing imagme requests
 -(void) cancelUpdatingResults {
-    self.privateMovies = nil;
+    self.privateMovies = [NSArray new];
+    [self.tableView reloadData];
     NSArray *allDownloads = [self.trackImageDownloadDict allValues];
     [allDownloads makeObjectsPerformSelector:@selector(cancelDownload)];
     [self.trackImageDownloadDict removeAllObjects];
@@ -73,8 +74,8 @@
         {
             [self downloadThumbnailForMovie:movie forIndexPath:indexPath];
         }
-        // if a download is deferred or in progress, return a placeholder image
-        cell.imageView.image = [UIImage imageNamed:@"placeholder.png"];
+        // meanwhile return a placeholder image
+        cell.poster.image = [UIImage imageNamed:@"placeholder.png"];
     }
     return cell;
 }
