@@ -24,7 +24,6 @@
 		B96E712C1FBA36A1009630ED /* SFApiManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B96E712B1FBA36A1009630ED /* SFApiManager.m */; };
 		B96E712F1FBA3D0A009630ED /* SFMoviesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B96E712E1FBA3D0A009630ED /* SFMoviesViewController.m */; };
 		B96E71321FBA3D1B009630ED /* SFFavoritesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B96E71311FBA3D1B009630ED /* SFFavoritesViewController.m */; };
-		B96E71351FBA3D2C009630ED /* SFSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B96E71341FBA3D2C009630ED /* SFSettingsViewController.m */; };
 		B96E713B1FBA6549009630ED /* SFNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B96E713A1FBA6549009630ED /* SFNetworkManager.m */; };
 /* End PBXBuildFile section */
 
@@ -81,8 +80,6 @@
 		B96E712E1FBA3D0A009630ED /* SFMoviesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SFMoviesViewController.m; sourceTree = "<group>"; };
 		B96E71301FBA3D1B009630ED /* SFFavoritesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SFFavoritesViewController.h; sourceTree = "<group>"; };
 		B96E71311FBA3D1B009630ED /* SFFavoritesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SFFavoritesViewController.m; sourceTree = "<group>"; };
-		B96E71331FBA3D2C009630ED /* SFSettingsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SFSettingsViewController.h; sourceTree = "<group>"; };
-		B96E71341FBA3D2C009630ED /* SFSettingsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SFSettingsViewController.m; sourceTree = "<group>"; };
 		B96E71391FBA6549009630ED /* SFNetworkManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SFNetworkManager.h; sourceTree = "<group>"; };
 		B96E713A1FBA6549009630ED /* SFNetworkManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SFNetworkManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -115,9 +112,8 @@
 		B96E70EC1FBA32B8009630ED = {
 			isa = PBXGroup;
 			children = (
-				033BF3E91FBB092600AE1B7E /* Localizable.strings */,
 				B96E70F71FBA32B8009630ED /* Movies */,
-				033BF3E91FBB092600AE1B7E /* LocalizationStrings.strings */,
+				033BF3E91FBB092600AE1B7E /* Localizable.strings */,
 				B96E71101FBA32B8009630ED /* MoviesTests */,
 				B96E711B1FBA32B8009630ED /* MoviesUITests */,
 				B96E70F61FBA32B8009630ED /* Products */,
@@ -149,8 +145,6 @@
 				030DEB601FBADE0F0076E853 /* SFMovieDetailVC.m */,
 				B96E71301FBA3D1B009630ED /* SFFavoritesViewController.h */,
 				B96E71311FBA3D1B009630ED /* SFFavoritesViewController.m */,
-				B96E71331FBA3D2C009630ED /* SFSettingsViewController.h */,
-				B96E71341FBA3D2C009630ED /* SFSettingsViewController.m */,
 				B96E712A1FBA36A1009630ED /* SFApiManager.h */,
 				B96E712B1FBA36A1009630ED /* SFApiManager.m */,
 				B96E70FE1FBA32B8009630ED /* Main.storyboard */,
@@ -331,7 +325,6 @@
 				B94A007C1FBB2D7500CB032B /* SFImageDownloader.m in Sources */,
 				B96E712F1FBA3D0A009630ED /* SFMoviesViewController.m in Sources */,
 				B96E70FA1FBA32B8009630ED /* AppDelegate.m in Sources */,
-				B96E71351FBA3D2C009630ED /* SFSettingsViewController.m in Sources */,
 				B96E712C1FBA36A1009630ED /* SFApiManager.m in Sources */,
 				030DEB5E1FBAB9E30076E853 /* SFSearchResultCell.m in Sources */,
 				B94A00741FBAB7FF00CB032B /* SFMovie.m in Sources */,
