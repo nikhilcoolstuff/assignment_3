@@ -11,10 +11,11 @@
 
 
 @protocol SFSearchResultsDelegate <NSObject>
-- (void) didSelectsearchResultCell:(SFMovie *)selectedMovie;
+- (void) didSelectSearchResultCellForMovie:(SFMovie *)selectedMovie;
 @end
 
 @interface SFSearchResultsController : UITableViewController
 @property(nonatomic, weak) id<SFSearchResultsDelegate> delegate;
--(void) updateSearchResultsForMovies: (NSArray *) movies; 
+-(void) updateSearchResultsForMovies: (NSArray *) movies;
+-(void) cancelUpdatingResults;
 @end

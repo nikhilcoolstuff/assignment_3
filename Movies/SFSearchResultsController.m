@@ -9,10 +9,11 @@
 #import "SFSearchResultsController.h"
 #import "SFSearchResultCell.h"
 #import "SFNetworkManager.h"
+#import "SFImageDownloader.h"
 
-@interface SFSearchResultsController () {
-    NSArray *privateMovies;
-}
+@interface SFSearchResultsController ()
+@property (nonatomic, strong) NSArray *privateMovies;
+@property (nonatomic, strong) NSMutableDictionary *trackImageDownloadDict;
 @property (nonatomic, strong) SFNetworkManager *networkManager;
 @end
 
@@ -21,7 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.networkManager = [[SFNetworkManager alloc] init];
-
+    self.trackImageDownloadDict = [NSMutableDictionary new];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -30,20 +31,34 @@
 }
 
 -(void) updateSearchResultsForMovies: (NSArray *) movies {
-    privateMovies = [movies copy];
+    self.privateMovies = movies;
     [self.tableView reloadData];
+}
+
+// Cancel ongoing imagme requests
+-(void) cancelUpdatingResults {
+    self.privateMovies = [NSArray new];
+    [self.tableView reloadData];
+    NSArray *allDownloads = [self.trackImageDownloadDict allValues];
+    [allDownloads makeObjectsPerformSelector:@selector(cancelDownload)];
+    [self.trackImageDownloadDict removeAllObjects];
+}
+
+- (void)dealloc
+{
+    [self cancelUpdatingResults];
 }
 
 #pragma mark - Table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return privateMovies.count;
+    return self.privateMovies.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     SFSearchResultCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SearchResultCell" forIndexPath:indexPath];
-    SFMovie *movie = privateMovies[indexPath.row];
+    SFMovie *movie = self.privateMovies[indexPath.row];
     
     //cell.poster = "";
     cell.directedBy.text =[NSLocalizedString(@"Directed_by",nil) stringByAppendingString:movie.artistName];
@@ -52,22 +67,48 @@
     cell.movieDetail.text = movie.shortDescription.length > 0 ? movie.shortDescription : movie.longDescription;
     cell.favButton.tag = indexPath.row;
     [cell.favButton addTarget:self action:@selector(favouriteClicked:) forControlEvents:UIControlEventTouchUpInside];
+    
+    // load any previously cached images
+    if (movie.thumbnail) {
+        cell.poster.image = movie.thumbnail;
+    } else {
+        // We dont have the thumbnail so request for downloading it. Make sure table view scroll has ended so we dont fetch unnecessary images.
+        if (!self.tableView.dragging && !self.tableView.decelerating)
+        {
+            [self downloadThumbnailForMovie:movie forIndexPath:indexPath];
+        }
+        // meanwhile return a placeholder image
+        cell.poster.image = [UIImage imageNamed:@"placeholder.png"];
+    }
     return cell;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    SFMovie *movie = privateMovies[indexPath.row];
-    if ([_delegate respondsToSelector:@selector(didSelectsearchResultCell:)]){
-        [_delegate didSelectsearchResultCell:movie];
+    SFMovie *movie = self.privateMovies[indexPath.row];
+    if ([_delegate respondsToSelector:@selector(didSelectSearchResultCellForMovie:)]){
+        [_delegate didSelectSearchResultCellForMovie:movie];
     }
 }
 
 #pragma mark - Local Methods
 
+-(void) downloadThumbnailForMovie: (SFMovie *)movie forIndexPath:(NSIndexPath *) indexPath {
+    SFImageDownloader *downloader = self.trackImageDownloadDict[indexPath];
+    if (!downloader) {
+        SFMovie *movie = self.privateMovies[indexPath.row];
+        downloader = [[SFImageDownloader alloc] initWithMovie:movie];
+        [downloader startDownloadWithCompletionHandler:^{
+            SFSearchResultCell *cell = (SFSearchResultCell *)[self.tableView cellForRowAtIndexPath:indexPath];
+            cell.poster.image = movie.thumbnail;
+            [self.trackImageDownloadDict removeObjectForKey:indexPath];
+        }];
+        self.trackImageDownloadDict[indexPath] = downloader;
+    }
+}
+
 -(void)favouriteClicked:(UIButton*)sender
 {
-    
-    SFMovie *movie = privateMovies[sender.tag];
+    SFMovie *movie = self.privateMovies[sender.tag];
     [self.networkManager  writeStringToFile:movie.trackName];
 }
 

@@ -12,7 +12,7 @@
 #import "SFMovieDetailVC.h"
 
 
-@interface SFMoviesViewController ()<SFSearchResultsDelegate>{
+@interface SFMoviesViewController ()<SFSearchResultsDelegate, UISearchBarDelegate>{
     SFMovie *searchSelectedMovie;
 }
 @property (nonatomic, strong) SFSearchResultsController *searchResultsVC;
@@ -27,9 +27,10 @@
     self.navigationItem.title = NSLocalizedString(@"Movies", nil);
     self.navigationController.navigationBar.prefersLargeTitles = YES;
     self.searchResultsVC = [self.storyboard instantiateViewControllerWithIdentifier:@"SearchResultsVC"];
-    self.searchController = [[UISearchController alloc] initWithSearchResultsController:self.searchResultsVC];
     self.searchResultsVC.delegate = self;
     self.searchController.searchBar.placeholder = NSLocalizedString(@"Search_Movies",nil);
+    self.searchController = [[UISearchController alloc] initWithSearchResultsController:self.searchResultsVC];
+    self.searchController.searchBar.delegate = self;
     self.searchController.searchResultsUpdater = self;
     self.navigationItem.searchController = self.searchController;
     self.definesPresentationContext = YES;
@@ -43,7 +44,15 @@
 }
 
 -(void)updateSearchResultsForSearchController:(UISearchController *)searchController {
-    [self.networkManager fetchSearchResultsForString:searchController.searchBar.text completionHandler:^(NSArray *movies, NSString *errorString) {
+    if (searchController.searchBar.text.length < 3)
+        return;
+    
+    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(requestNewDataFromServer) object:nil];
+    [self performSelector:@selector(requestNewDataFromServer) withObject:nil afterDelay:0.5f];
+}
+
+-(void) requestNewDataFromServer {
+    [self.networkManager fetchSearchResultsForString:self.searchController.searchBar.text completionHandler:^(NSArray *movies, NSString *errorString) {
         if (errorString)
             // TODO show error
             NSLog(errorString);
@@ -52,15 +61,17 @@
     }];
 }
 
-#pragma mark - SFSearchResultsDelegate
-
-- (void) didSelectsearchResultCell:(SFMovie *)selectedMovie{
-    searchSelectedMovie = selectedMovie ;
-    [self performSegueWithIdentifier:@"movie_detail_segue" sender:nil];
-
+#pragma mark UISearchBar delegate
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
+    [self.searchResultsVC cancelUpdatingResults];
 }
 
+#pragma mark - SFSearchResultsDelegate
 
+- (void) didSelectSearchResultCellForMovie:(SFMovie *)selectedMovie{
+    searchSelectedMovie = selectedMovie;
+    [self performSegueWithIdentifier:@"movie_detail_segue" sender:nil];
+}
 
 #pragma mark - Navigation
 
