@@ -7,7 +7,7 @@
 //
 
 #import "SFCacheManager.h"
-
+#import "SFMovie.h"
 @implementation SFCacheManager
 
 + (instancetype)sharedManager {
@@ -28,10 +28,14 @@
 }
 
 -(void) favoriteMovie: (SFMovie *) movie {
-    if (movie)
+    // toggle favorite
+    if([self.favoritesLookupSet containsObject:movie.trackId]) {
+        [self.favoritedMovies removeObject:movie];
+    } else {
         [self.favoritedMovies addObject: movie];
-    [NSKeyedArchiver archiveRootObject:self.favoritedMovies toFile:[self getCachePath]];
+    }
     self.favoritesLookupSet = [self.favoritedMovies valueForKey:@"trackId"];
+    [NSKeyedArchiver archiveRootObject:self.favoritedMovies toFile:[self getCachePath]];
 }
 
 -(void) loadFavoritedMovies {
