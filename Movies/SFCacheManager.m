@@ -19,12 +19,25 @@
     return _sharedManager;
 }
 
--(void) favoriteMovie: (SFMovie *) movie {
-    [NSKeyedArchiver archiveRootObject:movie toFile:[self getCachePath]];
+-(instancetype)init {
+    self = [super init];
+    if (self)
+        [self loadFavoritedMovies];
+    
+    return self;
 }
 
--(NSArray *)getFavoriteMovies {
-    return [NSKeyedUnarchiver unarchiveObjectWithFile:[self getCachePath]];
+-(void) favoriteMovie: (SFMovie *) movie {
+    if (movie)
+        [self.favoritedMovies addObject: movie];
+    [NSKeyedArchiver archiveRootObject:self.favoritedMovies toFile:[self getCachePath]];
+}
+
+-(void) loadFavoritedMovies {
+    self.favoritedMovies = [NSKeyedUnarchiver unarchiveObjectWithFile:[self getCachePath]];
+    if (!self.favoritedMovies) {
+        self.favoritedMovies = [NSMutableArray new];
+    }
 }
 
 - (NSString *) getCachePath {

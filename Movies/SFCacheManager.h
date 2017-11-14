@@ -12,7 +12,8 @@
 @interface SFCacheManager : NSObject
 + (instancetype)sharedManager;
 
+@property (nonatomic, strong) NSMutableArray *favoritedMovies;
+
 -(void) favoriteMovie: (SFMovie *) movie;
--(NSArray *)getFavoriteMovies;
 
 @end

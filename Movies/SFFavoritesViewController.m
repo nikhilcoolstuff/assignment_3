@@ -8,6 +8,9 @@
 
 #import "SFFavoritesViewController.h"
 #import "SFCacheManager.h"
+#import "SFSearchResultCell.h"
+#import "SFMovie.h"
+#import "SFUtilities.h"
 
 @interface SFFavoritesViewController ()
 @property (nonatomic, strong) NSArray *favoriteMovies;
@@ -18,12 +21,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.title = NSLocalizedString(@"Favorites", nil);
+    self.favoriteMovies = [NSArray new];
 }
 
 -(void) viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    self.favoriteMovies = [[SFCacheManager sharedManager] getFavoriteMovies];
-    NSLog(@"test");
+    self.favoriteMovies = [SFCacheManager sharedManager].favoritedMovies;
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -34,16 +38,41 @@
 #pragma mark - Table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 5;
+    return self.favoriteMovies.count;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"favoritesCell" forIndexPath:indexPath];
-    cell.textLabel.text = @"test";
+    SFSearchResultCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SearchResultCell" forIndexPath:indexPath];
+    SFMovie *movie = self.favoriteMovies[indexPath.row];
+    
+    cell.directedBy.text =[NSLocalizedString(@"Directed_by",nil) stringByAppendingString:movie.artistName];
+    cell.releaseDate.text = [NSLocalizedString(@"Release_date",nil) stringByAppendingString:[SFUtilities formateDateString:movie.releaseDate]];
+    cell.movieName.text = movie.trackName;
+    cell.movieDetail.text = movie.shortDescription.length > 0 ? movie.shortDescription : movie.longDescription;
+    cell.favButton.tag = indexPath.row;
+    [cell.favButton addTarget:self action:@selector(favoriteAction:) forControlEvents:UIControlEventTouchUpInside];
+    
+    // load any previously cached images
+    if (movie.thumbnail) {
+        cell.poster.image = movie.thumbnail;
+    } else {
+        // We dont have the thumbnail so request for downloading it. Make sure table view scroll has ended so we dont fetch unnecessary images.
+        if (!self.tableView.dragging && !self.tableView.decelerating)
+        {
+//            [self downloadThumbnailForMovie:movie forIndexPath:indexPath];
+        }
+        // meanwhile return a placeholder image
+        cell.poster.image = [UIImage imageNamed:@"placeholder.png"];
+    }
     return cell;
 }
 
+-(void)favoriteAction:(UIButton*)sender
+{
+    SFMovie *movie = self.favoriteMovies[sender.tag];
+    [[SFCacheManager sharedManager] favoriteMovie:movie];
+}
 
 /*
 // Override to support conditional editing of the table view.

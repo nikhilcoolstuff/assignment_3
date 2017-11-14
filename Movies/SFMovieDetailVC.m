@@ -9,6 +9,7 @@
 #import "SFMovieDetailVC.h"
 @import AVFoundation;
 @import AVKit;
+#import "SFUtilities.h"
 
 @interface SFMovieDetailVC ()
 @property (weak, nonatomic) IBOutlet UILabel *movieName;
@@ -47,9 +48,10 @@
                                                          action:@selector(favoriteAction)];
     self.navigationItem.rightBarButtonItem = _btn;
 }
+
 -(void) intialDataSetup {
     self.movieName.text = self.selectedMovie.trackName;
-    self.releaseDate.text = [NSLocalizedString(@"Release_date",nil)  stringByAppendingString:[self formateDateString:self.selectedMovie.releaseDate]];
+    self.releaseDate.text = [NSLocalizedString(@"Release_date",nil)  stringByAppendingString:[SFUtilities formateDateString:self.selectedMovie.releaseDate]];
     self.duration.text = [NSLocalizedString(@"Duration",nil) stringByAppendingString:[self millsToDurationString:self.selectedMovie.trackTimeMillis]];
     self.directedBy.text =[NSLocalizedString(@"Directed_by",nil) stringByAppendingString:self.selectedMovie.artistName];
     self.movieDetail.text = self.selectedMovie.shortDescription.length > 0 ? self.selectedMovie.shortDescription : self.selectedMovie.longDescription;
@@ -70,14 +72,6 @@
 
 -(void)favoriteAction
 {
-}
-
--(NSString *)formateDateString:(NSString * )apiDate{
-    NSISO8601DateFormatter *formatter = [[NSISO8601DateFormatter alloc] init];
-    NSDate *date = [formatter dateFromString:apiDate];
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"MMM d, yyyy"];
-    return  [dateFormatter stringFromDate:date];
 }
 
 -(NSString *)millsToDurationString:(NSNumber *)timeInSeconds {

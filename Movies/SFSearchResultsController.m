@@ -11,6 +11,7 @@
 #import "SFNetworkManager.h"
 #import "SFImageDownloader.h"
 #import "SFCacheManager.h"
+#import "SFUtilities.h"
 
 @interface SFSearchResultsController ()
 @property (nonatomic, strong) NSArray *privateMovies;
@@ -64,7 +65,7 @@
     
     //cell.poster = "";
     cell.directedBy.text =[NSLocalizedString(@"Directed_by",nil) stringByAppendingString:movie.artistName];
-    cell.releaseDate.text = [NSLocalizedString(@"Release_date",nil) stringByAppendingString:[self formateDateString:movie.releaseDate]];
+    cell.releaseDate.text = [NSLocalizedString(@"Release_date",nil) stringByAppendingString:[SFUtilities formateDateString:movie.releaseDate]];
     cell.movieName.text = movie.trackName;
     cell.movieDetail.text = movie.shortDescription.length > 0 ? movie.shortDescription : movie.longDescription;
     cell.favButton.tag = indexPath.row;
@@ -114,11 +115,4 @@
     [[SFCacheManager sharedManager] favoriteMovie:movie];
 }
 
--(NSString *)formateDateString:(NSString * )apiDate{
-    NSISO8601DateFormatter *formatter = [[NSISO8601DateFormatter alloc] init];
-    NSDate *date = [formatter dateFromString:apiDate];
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"MMM d, yyyy"];
-    return  [dateFormatter stringFromDate:date];
-}
 @end

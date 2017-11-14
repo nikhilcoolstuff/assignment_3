@@ -26,6 +26,7 @@
 		B96E712C1FBA36A1009630ED /* SFApiManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B96E712B1FBA36A1009630ED /* SFApiManager.m */; };
 		B96E712F1FBA3D0A009630ED /* SFMoviesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B96E712E1FBA3D0A009630ED /* SFMoviesViewController.m */; };
 		B96E713B1FBA6549009630ED /* SFNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B96E713A1FBA6549009630ED /* SFNetworkManager.m */; };
+		B9EDC41C1FBB50EE00E4C1D8 /* SFUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = B9EDC41B1FBB50EE00E4C1D8 /* SFUtilities.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +86,8 @@
 		B96E712E1FBA3D0A009630ED /* SFMoviesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SFMoviesViewController.m; sourceTree = "<group>"; };
 		B96E71391FBA6549009630ED /* SFNetworkManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SFNetworkManager.h; sourceTree = "<group>"; };
 		B96E713A1FBA6549009630ED /* SFNetworkManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SFNetworkManager.m; sourceTree = "<group>"; };
+		B9EDC41A1FBB50EE00E4C1D8 /* SFUtilities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SFUtilities.h; sourceTree = "<group>"; };
+		B9EDC41B1FBB50EE00E4C1D8 /* SFUtilities.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SFUtilities.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +167,8 @@
 				B94A007D1FBB36EB00CB032B /* placeholder.png */,
 				B94A007F1FBB464000CB032B /* SFCacheManager.h */,
 				B94A00801FBB464000CB032B /* SFCacheManager.m */,
+				B9EDC41A1FBB50EE00E4C1D8 /* SFUtilities.h */,
+				B9EDC41B1FBB50EE00E4C1D8 /* SFUtilities.m */,
 			);
 			path = Movies;
 			sourceTree = "<group>";
@@ -322,6 +327,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9EDC41C1FBB50EE00E4C1D8 /* SFUtilities.m in Sources */,
 				030DEB611FBADE0F0076E853 /* SFMovieDetailVC.m in Sources */,
 				B96E713B1FBA6549009630ED /* SFNetworkManager.m in Sources */,
 				030DEB5B1FBAA9320076E853 /* SFSearchResultsController.m in Sources */,
