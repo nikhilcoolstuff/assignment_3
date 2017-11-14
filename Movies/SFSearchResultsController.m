@@ -45,11 +45,28 @@
     
     //cell.poster = "";
     cell.directedBy.text =[@"Directed by:" stringByAppendingString:movie.artistName];
-    cell.releaseDate.text = [@"Release date:" stringByAppendingString:movie.releaseDate];
+    cell.releaseDate.text = [@"Release date:" stringByAppendingString:[self formateDateString:movie.releaseDate]];
     cell.movieName.text = movie.trackName;
     cell.movieDetail.text = movie.shortDescription.length > 0 ? movie.shortDescription : movie.longDescription;
-    //favButton;
+    cell.favButton.tag = indexPath.row;
+    [cell.favButton addTarget:self action:@selector(favouriteClicked:) forControlEvents:UIControlEventTouchUpInside];
     return cell;
 }
 
+#pragma mark - Local Methods
+
+-(void)favouriteClicked:(UIButton*)sender
+{
+    
+    SFMovie *movie = privateMovies[sender.tag];
+    NSLog(movie.trackName);
+}
+
+-(NSString *)formateDateString:(NSString * )apiDate{
+    NSISO8601DateFormatter *formatter = [[NSISO8601DateFormatter alloc] init];
+    NSDate *date = [formatter dateFromString:apiDate];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"MMM d, yyyy"];
+    return  [dateFormatter stringFromDate:date];
+}
 @end
